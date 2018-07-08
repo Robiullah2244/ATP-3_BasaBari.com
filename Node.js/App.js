@@ -72,7 +72,14 @@ app.get('/signup',function(req,res)
 {
 	res.render('signup');
 })
-
+app.get('/userPendingPosts',function(req,res)
+{
+	res.render('userPendingPosts');
+})
+app.get('/UserBalanceReport',function(req,res)
+{
+	res.render('UserBalanceReport');
+})
 
 //SERVER START
 app.listen(port,function() {
