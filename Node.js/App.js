@@ -1,10 +1,14 @@
 //DECLARATION
 var express = require('express');
 var app=express();
-var port=80;
+var port=1995;
 
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
+
+var signIn = require('./Controllers/SignIn');
+// var logout = require('/controllers/logout');
+// var home = require('/controllers/home');
 
 //CONFIGURE
 app.set('view engine','ejs');
@@ -15,6 +19,13 @@ app.use('/Contents',express.static('Contents'));
 
 // ROUTES
 //app.use('/login', login);
+
+
+app.use('/signIn', signIn);
+// app.use('/logout', logout);
+// app.use('/home', home);
+
+
 app.get('/',function(req,res)
 {
 	res.render('publicHome');

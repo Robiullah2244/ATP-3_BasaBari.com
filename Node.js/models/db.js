@@ -3,7 +3,7 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : 'node'
+  database : 'basabari.com_db'
 });
 
 module.exports = {
