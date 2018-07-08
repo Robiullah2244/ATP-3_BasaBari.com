@@ -248,110 +248,56 @@
 	</div>
 	<!-- /.box-header -->
 	<!-- form start -->
-        
-          <div class="box-body" style="margin-left:.5%;margin-right:.5%">
-         
-        <table width='100%' >
-            <tr >
-            <td width='50%'style='padding: 5px;'valign="top">
+          <div class="box-body">
+        <table>
+            <tr width='50%'>
                 
 	
-		<div  class="form-group" >
-            <label for="houseName">House Name <font color="red" size="5"> *</font></label>
-		  <input type="text" class="form-control" id="houseName" placeholder="Enter the address">
-		</div>
-        <div  class="form-group" >
-            <label for="location">Location <font color="red" size="5"> *</font></label>
+		<div  class="form-group">
+		  <label for="location">Location</label>
 		  <input type="text" class="form-control" id="location" placeholder="Enter the address">
 		</div>
-            <div  class="form-group" >
-                <label for="holdingNumber">Holding Number <font color="red" size="5"> *</font></label>
-              <input type="text" class="form-control" id="holdingNumber" placeholder="Enter the holding number">
-            </div>
-            <div  class="form-group">
-            <label for="rent">Rent <font color="red" size="5"> *</font></label>
-          <input type="text" class="form-control" id="rent" placeholder="Enter rent">
-            </div>
-            <div class="form-group" >
-		  <label for="houseType">House Type<font color="red" size="5"> *</font></label>
-		  <select name="category" id="houseType" onclick="validateHouseType()" >
+		<div class="form-group">
+		  <label for="exampleInputEmail1">Category</label>
+		  <select name="category" id="category" onclick="validateCategory()" >
 				<option value="Please select">Please select</option>
-				<option value="Tin shade">Tin shade</option>
-				<option value="Building">Building</option>
-				<option value="Duplex ">Duplex </option>
-			</select>&nbsp;&nbsp;<span id="houseTypeErrorMassage"></span>
+				<option value="Graphics & Design">Graphics & Design</option>
+				<option value="Digital Marketing">Digital Marketing</option>
+				<option value="Writing & Translation">Writing & Translation</option>
+				<option value="Music & Audio">Music & Audio</option>
+				<option value="Programming & Tech">Programming & Tech</option>
+				<option value="Business">Business</option>
+				<option value="Video & Animation">Video & Animation</option>
+			</select>&nbsp;&nbsp;<span id="categoryErrorMassage"></span>
 		</div>
-            <div  class="form-group">
-            <label for="bedroom">Bedroom <font color="red" size="5"> *</font></label>
-          <input type="text" class="form-control" id="bedroom" placeholder="Number of bed room">
-            </div>
-             <div  class="form-group">
-            <label for="bathroom">Bathroom <font color="red" size="5"> *</font></label>
-          <input type="text" class="form-control" id="bedroom" placeholder="Number of bathroom">
-            </div>
-            <div  class="form-group">
-            <label for="area">Area </label>
-          <input type="text" class="form-control" id="area" placeholder="Enter the square feet of the house">
-            </div>
-		   </td>
+          
 		
-            <td width='50%' style='padding: 5px;' valign="top">
-                 <div  class="form-group">
-                    <label for="balcony">Balcony <font color="red" size="5"> *</font></label>
-                  <input type="text" class="form-control" id="balcony" placeholder="Number of balcony">
-                </div>
-                <div  class="form-group">
-                    <label for="drawingroom">Drawing Room<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="drawingroom" value="yes" >Yes
-                  <input type="radio"  name="drawingroom" value="no" >No
-                </div>
-                <div  class="form-group">
-                    <label for="diningroom">Dining Room<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="diningroom" value="yes" >Yes
-                  <input type="radio"  name="diningroom" value="no" >No
-                </div>
-                 <div  class="form-group">
-                    <label for="lift">Lift<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="lift" value="yes" >Yes
-                  <input type="radio"  name="lift" value="no" >No
-                </div>
-                <div  class="form-group">
-                    <label for="gas">Gas<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="gas" value="yes" >Yes
-                  <input type="radio"  name="ggeneratoras" value="no" >No
-                </div>
-                <div  class="form-group">
-                    <label for="generator">Generator<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="generator" value="yes" >Yes
-                  <input type="radio"  name="generator" value="no" >No
-                </div>
-                <div  class="form-group">
-                    <label for="generator">Generator<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="generator" value="yes" >Yes
-                  <input type="radio"  name="generator" value="no" >No
-                </div>
-                <div  class="form-group">
-                    <label for="internet">Internet<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="internet" value="yes" >Yes
-                  <input type="radio"  name="internet" value="no" >No
-                </div>
-                 <div  class="form-group">
-                    <label for="intercom">Intercom<font color="red" size="5"> *</font></label>
-                  <input type="radio"  name="intercom" value="yes" >Yes
-                  <input type="radio"  name="intercom" value="no" >No
-                </div>
-                  <div  class="form-group" >
-                    <label for="specialNote">Special Note</label>
-                  <input type="text" class="form-control" id="specialNote" placeholder="Enter your speical requirements which need to be follow">
-                </div>
+		<div class="form-group">
+		  <label for="exampleInputPassword1">Price</label>
+		  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Price in BDT">
+		</div>
+		<div class="form-group">
+		  <label for="exampleInputPassword1">Description</label>
+		  <textarea class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
+		</div>
+		<div class="form-group">
+		  <label for="exampleInputFile">Choose a Image</label>
+		  <input type="file" id="exampleInputFile">
 
-                
-               
-            </td>  
+		 
+		</div>
+		
+	  
             </tr>
-             
+            <tr width='50%'>
+                <div  class="form-group">
+		  <label for="adress">Adress</label>
+		  <input type="text" class="form-control" id="location" placeholder="Enter the address">
+		</div>
+                
+            </tr>
         </table>
-         </div>
+        </div>
 	  <!-- /.box-body -->
 
 	  <div class="box-footer">

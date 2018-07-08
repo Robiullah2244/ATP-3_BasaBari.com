@@ -45,7 +45,7 @@
       <div class="container">
         <div class="navbar-header">
 		
-          <a href="home" ><img width="100" height= "45" src="/contents/image/logo.png"></a>
+          <a href="home.html" ><img width="100" height= "45" src="image/logo.png"></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -72,7 +72,7 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img src="/contents/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
@@ -87,7 +87,7 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="Messenger">See All Messages</a></li>
+                <li class="footer"><a href="Messenger.html">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -112,7 +112,7 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer"><a href="Notification">View all</a></li>
+                <li class="footer"><a href="Notification.html">View all</a></li>
               </ul>
             </li>
             <!-- Tasks Menu -->
@@ -147,7 +147,7 @@
                   </ul>
                 </li>
                 <li class="footer">
-                  <a href="tasks">View all tasks</a>
+                  <a href="tasks.html">View all tasks</a>
                 </li>
               </ul>
             </li>
@@ -159,7 +159,7 @@
 			
 			<li class="dropdown tasks-menu">
               <!-- Menu Toggle Button -->
-              <a href="Blog" class="fa ion-compose">
+              <a href="Blog.html" class="fa ion-compose">
               
               </a>
               
@@ -171,7 +171,7 @@
 			
 			<li class="dropdown tasks-menu">
               <!-- Menu Toggle Button -->
-              <a href="DashBoard" class="fa  fa-dashboard (alias)">
+              <a href="DashBoard.html" class="fa  fa-dashboard (alias)">
                
                 
               </a>
@@ -186,14 +186,14 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="/contents/image/User/Md. Robi Ullah.jpg" class="user-image" alt="User Image">
+                <img src="image/User/Md. Robi Ullah.jpg" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">Md. Robi Ullah</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="/contents/image/User/Md. Robi Ullah.jpg" class="img-circle" alt="User Image">
+                  <img src="image/User/Md. Robi Ullah.jpg" class="img-circle" alt="User Image">
 
                   <p>
                     Md. Robi Ullah
@@ -218,10 +218,10 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="userProfile" class="btn btn-default btn-flat">Profile</a>
+                    <a href="sellerProfile.html" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="PublicHome" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="PublicHome.html" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -241,136 +241,139 @@
   
 	<div style="margin-left:20%;margin-right:20%"><br/>
 	
-	<form  method="POST" enctype="multipart/form-data" action="userProfile">
+	<form  method="POST" enctype="multipart/form-data" action="SellerProfile.html">
 	<div class="box box-primary" >
 	<div class="box-header with-border">
-	  <h3 class="box-title">Edit Gig</h3>
+	  <h3 class="box-title">Create Post</h3>
 	</div>
 	<!-- /.box-header -->
 	<!-- form start -->
-
-	  <div class="box-body">
-		<div class="form-group">
-		  <label for="exampleInputEmail1">Gig Title</label>
-		  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Gig Title">
+        
+          <div class="box-body" style="margin-left:.5%;margin-right:.5%">
+         
+        <table width='100%' >
+            <tr >
+            <td width='50%'style='padding: 5px;'valign="top">
+                
+	
+		<div  class="form-group" >
+            <label for="houseName">House Name <font color="red" size="5"> *</font></label>
+		  <input type="text" class="form-control" id="houseName" placeholder="Enter the address">
 		</div>
-		<div class="form-group">
-		  <label for="exampleInputEmail1">Category</label>
-		  <select name="category" id="category" onclick="validateCategory()" >
+        <div  class="form-group" >
+            <label for="location">Location <font color="red" size="5"> *</font></label>
+		  <input type="text" class="form-control" id="location" placeholder="Enter the address">
+		</div>
+            <div  class="form-group" >
+                <label for="holdingNumber">Holding Number <font color="red" size="5"> *</font></label>
+              <input type="text" class="form-control" id="holdingNumber" placeholder="Enter the holding number">
+            </div>
+            <div  class="form-group">
+            <label for="rent">Rent <font color="red" size="5"> *</font></label>
+          <input type="text" class="form-control" id="rent" placeholder="Enter rent">
+            </div>
+            <div class="form-group" >
+		  <label for="houseType">House Type<font color="red" size="5"> *</font></label>
+		  <select name="category" id="houseType" onclick="validateHouseType()" >
 				<option value="Please select">Please select</option>
-				<option value="Graphics & Design">Graphics & Design</option>
-				<option value="Digital Marketing">Digital Marketing</option>
-				<option value="Writing & Translation">Writing & Translation</option>
-				<option value="Music & Audio">Music & Audio</option>
-				<option value="Programming & Tech">Programming & Tech</option>
-				<option value="Business">Business</option>
-				<option value="Video & Animation">Video & Animation</option>
-			</select>&nbsp;&nbsp;<span id="categoryErrorMassage"></span>
+				<option value="Tin shade">Tin shade</option>
+				<option value="Building">Building</option>
+				<option value="Duplex ">Duplex </option>
+			</select>&nbsp;&nbsp;<span id="houseTypeErrorMassage"></span>
 		</div>
+            <div  class="form-group">
+            <label for="bedroom">Bedroom <font color="red" size="5"> *</font></label>
+          <input type="text" class="form-control" id="bedroom" placeholder="Number of bed room">
+            </div>
+             <div  class="form-group">
+            <label for="bathroom">Bathroom <font color="red" size="5"> *</font></label>
+          <input type="text" class="form-control" id="bedroom" placeholder="Number of bathroom">
+            </div>
+            <div  class="form-group">
+            <label for="area">Area </label>
+          <input type="text" class="form-control" id="area" placeholder="Enter the square feet of the house">
+            </div>
+		   </td>
 		
-		<div class="form-group">
-		  <label for="exampleInputPassword1">Price</label>
-		  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Price in BDT">
-		</div>
-		<div class="form-group">
-		  <label for="exampleInputPassword1">Description</label>
-		  <textarea class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
-		</div>
-		<div class="form-group">
-		  <label for="exampleInputFile">Choose a Image</label>
-		  <input type="file" id="exampleInputFile">
+            <td width='50%' style='padding: 5px;' valign="top">
+                 <div  class="form-group">
+                    <label for="balcony">Balcony <font color="red" size="5"> *</font></label>
+                  <input type="text" class="form-control" id="balcony" placeholder="Number of balcony">
+                </div>
+                <div  class="form-group">
+                    <label for="drawingroom">Drawing Room<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="drawingroom" value="yes" >Yes
+                  <input type="radio"  name="drawingroom" value="no" >No
+                </div>
+                <div  class="form-group">
+                    <label for="diningroom">Dining Room<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="diningroom" value="yes" >Yes
+                  <input type="radio"  name="diningroom" value="no" >No
+                </div>
+                 <div  class="form-group">
+                    <label for="lift">Lift<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="lift" value="yes" >Yes
+                  <input type="radio"  name="lift" value="no" >No
+                </div>
+                <div  class="form-group">
+                    <label for="gas">Gas<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="gas" value="yes" >Yes
+                  <input type="radio"  name="ggeneratoras" value="no" >No
+                </div>
+                <div  class="form-group">
+                    <label for="generator">Generator<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="generator" value="yes" >Yes
+                  <input type="radio"  name="generator" value="no" >No
+                </div>
+                <div  class="form-group">
+                    <label for="generator">Generator<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="generator" value="yes" >Yes
+                  <input type="radio"  name="generator" value="no" >No
+                </div>
+                <div  class="form-group">
+                    <label for="internet">Internet<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="internet" value="yes" >Yes
+                  <input type="radio"  name="internet" value="no" >No
+                </div>
+                 <div  class="form-group">
+                    <label for="intercom">Intercom<font color="red" size="5"> *</font></label>
+                  <input type="radio"  name="intercom" value="yes" >Yes
+                  <input type="radio"  name="intercom" value="no" >No
+                </div>
+                  <div  class="form-group" >
+                    <label for="specialNote">Special Note</label>
+                  <input type="text" class="form-control" id="specialNote" placeholder="Enter your speical requirements which need to be follow">
+                </div>
 
-		 
-		</div>
-		
-	  </div>
+                
+               
+            </td>  
+            </tr>
+             
+        </table>
+         </div>
 	  <!-- /.box-body -->
 
 	  <div class="box-footer">
 		<button type="submit" class="btn btn-primary">Submit</button>
 	  </div>
-	</form>
+        
 	  </div>
+	</form>
 	</div>
+      
 
 							
 			
 			
 			
-	<table>
-			<tr colspan="3" height="20%">
-			  
-			   <table border="0" width="100%">
-				  </br></br><hr>
-					<tr>
-					   <th align="left">CATEGORIES</th>
-					   <th align="left">ABOUT</th>
-					   <th align="left">COMMUNITY</th>
-					   <th align="left">SUPPORT</th>
-					   <th align="left">FOLLOW US</th>
-				   </tr>
-				  
-				  <tr>
-						<td> <a href="Home">Graphics & Design</a></td>
-						<td>Careers</td>
-						<td>Blog</td>
-						<td>Contact Support</td>
-						<td> <a href="https://www.google.com/">Google</a></td>
-					</tr>
-					<tr>
-						<td><a href="Home">Digital Marketing</a></td>
-						<td>Press & News</td>
-						<td>Forum</td>
-						<td>Help & Education</td>
-						<td>  <a href="https://twitter.com/">Twitter</a></td>
-					
-					</tr>
-					<tr>
-						<td><a href="Home">Writing & Translation</a></td>
-						<td>Partnerships</td>
-						<td>Podcast</td>
-						<td>Trust & Safety</td>
-						<td> <a href="https://Youtube.com">Youtube</a></td>
-					
-					</tr>
-					<tr>
-						<td><a href="Home"> Video & Animation</a></td>
-						<td>Privacy Policy</td>
-						<td>Affiliates</td>
-						<td>Selling on Freelance</td>
-						<td> <a href="https://www.facebook.com/robiullah2244">Facebook</a></td>
-					
-					</tr>
-					<tr>
-						<td><a href="Home"> Music & Audio</a></td>
-						<td>Terms of Service</td>
-						<td></td>
-						<td>Buying on freelance</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td> <a href="Home">Programming & Tech</a></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td><a href="Home">Business</a></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-				   </tr>
-			   </table>
-			</tr>
-		</table>
+	
 		
 					   
 	<hr style="margin-bottom: 0em;color: black;background-color: black;height: 5px">
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="container">
+    <div class="container" >
       <div class="pull-right hidden-xs">
         <b>Version</b> 2.0.0
       </div>
@@ -379,9 +382,9 @@
     </div>
     <!-- /.container -->
   </footer>
-	
+    </div>
 </div>
-</body>
+<!--</body>-->
 
 		
 		<!-- ./wrapper -->
