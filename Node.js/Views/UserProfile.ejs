@@ -27,51 +27,7 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <script>
-	function AddLanguage()
-	{
-		document.getElementById("language").innerHTML='<td colspan="4" class="form-group"><label for="name">New Language </label><input class="form-control" id="newLanguage" type="text" value="Type your Language"> <button onclick="AddLanguageinpanel()"><font size="3">Submit</font></button></td>';
-    }
-	function AddLanguageinpanel()
-	{
-		document.getElementById("language2").innerHTML+= '</br>'+document.getElementById("newLanguage").value;
-		document.getElementById("language").innerHTML="";
-    }
-	function Adddescription()
-	{
-		document.getElementById("textboxpanel").innerHTML='<td colspan="4" class="form-group"><textarea class="form-control" id="adddescriptionpanle">'+document.getElementById("textboxpanelLoder").innerHTML+'</textarea><button onclick="Adddescriptioninpanel()"><font size="3">Edit</font></button></td>';
-
-    }
-	function Adddescriptioninpanel()
-	{
-
-		document.getElementById("textboxpanelLoder").innerHTML = document.getElementById("adddescriptionpanle").value;
-		document.getElementById("textboxpanel").innerHTML="";
-    }
-	
-	function Addskill()
-	{
-		document.getElementById("skillpanel").innerHTML='<td colspan="4" class="form-group"><textarea class="form-control" id="skillinpanel">'+document.getElementById("SkillLoder").innerHTML+'</textarea><button onclick="Addskillonpanel()"><font size="3">Edit</font></button></td>';
-
-    }
-	function Addskillonpanel()
-	{
-
-		document.getElementById("SkillLoder").innerHTML = document.getElementById("skillinpanel").value;
-		document.getElementById("skillpanel").innerHTML="";
-    }
-	<!--function clearcontents(adddescriptionpanle)
-	<!--{
-	<!--if(document.getElementById("adddescriptionpanle").value=="Your description .")
-	<!--{adddescriptionpanle.value = '';}
-	<!--	else
-	<!--	{
-	<!--		document.getElementById("textboxpanel").innerHTML='<td colspan="4" class="form-group"><textarea class="form-control" id="adddescriptionpanle" onclick="clearcontents(adddescriptionpanle)">'+document.getElementById("textboxpanelLoder").innerHTML+'</textarea><button onclick="Adddescriptioninpanel()"><font size="3">Edit</font></button></td>';
-	<!--	}
-	<!--}
-	-->
-	
-</script>
+  
 </head>
 <!-- ADD THE CLASS sidebar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
@@ -141,7 +97,7 @@
                 <td>	
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="/contents/image/addgig.png"/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="AddPost"><button>Add a Post</button></a>
+                    <a href="AddPost"><button class="btn btn-primary" style="width: 125px">Add a Post</button></a>
                 </td>
 
             </tr>

@@ -48,6 +48,32 @@ app.get('/userProfile',function(req,res)
 {
 	res.render('userProfile');
 })
+app.get('/userAccountStatement',function(req,res)
+{
+	res.render('userAccountStatement');
+})
+app.get('/Messenger',function(req,res)
+{
+	res.render('Messenger');
+})
+app.get('/addpost',function(req,res)
+{
+	res.render('addpost');
+})
+app.get('/userSettings',function(req,res)
+{
+	res.render('userSettings');
+})
+app.get('/signin',function(req,res)
+{
+	res.render('signin');
+})
+app.get('/signup',function(req,res)
+{
+	res.render('signup');
+})
+
+
 //SERVER START
 app.listen(port,function() {
   console.log('Server started');
