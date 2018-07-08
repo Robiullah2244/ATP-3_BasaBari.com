@@ -10,6 +10,8 @@ var signIn = require('./Controllers/SignIn');
 // var logout = require('/controllers/logout');
 // var home = require('/controllers/home');
 
+var signUp = require('./Controllers/SignUp');
+
 //CONFIGURE
 app.set('view engine','ejs');
 
@@ -24,6 +26,7 @@ app.use('/Contents',express.static('Contents'));
 app.use('/signIn', signIn);
 // app.use('/logout', logout);
 // app.use('/home', home);
+app.use('/signUp',signUp);
 
 
 app.get('/',function(req,res)
@@ -79,10 +82,10 @@ app.get('/signin',function(req,res)
 {
 	res.render('signin');
 })
-app.get('/signup',function(req,res)
-{
-	res.render('signup');
-})
+// app.get('/signup',function(req,res)
+// {
+// 	res.render('signup');
+// })
 app.get('/userPendingPosts',function(req,res)
 {
 	res.render('userPendingPosts');
