@@ -68,17 +68,17 @@
 
       <div class="form-group">
 		  <label for="userName">User Name</label>
-		  <input type="text" class="form-control" id="userName" value="<%=SignUpData.userName%>" name="userName"placeholder="Choose a unique user name">
+		  <input type="text" class="form-control" id="userName" value="<%=SignUpData.userName%>" name="userName"placeholder="Choose a unique user name" required>
 	  </div>
 
       <div class="form-group">
 		  <label for="name">Name</label>
-		  <input type="text" class="form-control" id="name" name="name" value="<%=SignUpData.name%>" placeholder="Enter your Name">
+		  <input type="text" class="form-control" id="name" name="name" value="<%=SignUpData.name%>" placeholder="Enter your Name" required>
 	  </div>
 
       <div class="form-group has-feedback">
           <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" value="<%=SignUpData.email%>" placeholder="Email">
+        <input type="email" class="form-control" id="email" name="email" value="<%=SignUpData.email%>"  placeholder="Email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
 
@@ -86,15 +86,17 @@
 
 	  <div class="form-group has-feedback">
 	    <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password"placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password"placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
 
 	  <div class="form-group has-feedback">
 	    <label for="reTypePassword">Re-Type Password</label>
-        <input type="password" class="form-control" id="reTypePassword" name="reTypePassword" placeholder="Password">
+        <input type="password" class="form-control" id="reTypePassword" name="reTypePassword" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <h5 style="color: Red"><% if(typeof passwordError!='undefined'){%>
+    <%= passwordError  %><%}%></h5>
 
 
       <div class="row">
@@ -108,11 +110,14 @@
         <!-- /.col -->
       </div>
     </form>
+    <h5 style="color: Red">
     <ul>
+        <% if(typeof passwordError=='undefined'){%>
 			<% for(var i = 0; i < errs.length; i++){ %>
 				<li><%= errs[i].message %></li>
-			<% } %>
+			<% } }%>
 		</ul>
+  </h5>
 
 
     <!-- /.social-auth-links -->

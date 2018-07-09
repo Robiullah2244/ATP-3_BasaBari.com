@@ -33,6 +33,7 @@ app.use('/Contents',express.static('Contents'));
 app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, resave: true}));
 
 
+app.use('/signUp',signUp);
 
 
 app.use('/houseDetails', houseDetails);
@@ -60,7 +61,7 @@ app.use('*', function(req, res, next){
 		{
 			next();
 		}
-		
+
 	}
 });
 
@@ -80,7 +81,7 @@ app.use('/userPendingRequest', userPendingRequest);
 
 // app.use('/logout', logout);
 // app.use('/home', home);
-app.use('/signUp',signUp);
+
 
 
 

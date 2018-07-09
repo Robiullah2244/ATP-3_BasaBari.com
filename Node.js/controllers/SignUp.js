@@ -14,14 +14,26 @@ router.post('/', function(req, res){
     userName:req.body.userName,
 		name: req.body.name,
 		email: req.body.email,
-    password:req.body.email
+    password:req.body.password,
+		reTypePassword:req.body.reTypePassword
 	};
   var validator=new asyncValidator(rules);
-  validator.validate(data,function(errors,fields) {
+  validator.validate(data,function(errors,fields ) {
     if(!errors){
-      userModel.insertUser(data.userName,data.name,data.email,data.password, function(obj){
-  			res.redirect('/SignIn');
-  		});
+			var passwordError="Password does not match";
+			if(data.password!=data.reTypePassword){
+				res.render('SignUp',{SignUpData:data,passwordError:passwordError});
+			}
+			else {
+				userModel.insertUser(data.userName,data.name,data.email,data.password, function(obj){
+					userModel.insertUsertoSignIn(data.userName,data.name,data.email,data.password, function(obj){
+
+						req.session.userName=req.body.userName;
+		  			res.redirect('/Home');
+					});
+	  		});
+			}
+
     }
     else{
       res.render('SignUp',{SignUpData:data,errs:errors});
