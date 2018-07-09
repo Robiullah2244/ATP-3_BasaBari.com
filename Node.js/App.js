@@ -6,8 +6,21 @@ var port=1995;
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 
-var signIn = require('./Controllers/SignIn');
-// var logout = require('/controllers/logout');
+
+
+
+
+var signIn = require('./controllers/SignIn');
+var signOut = require('./controllers/SignOut');
+var publicHome = require('./controllers/PublicHome');
+var home = require('./controllers/Home');
+var houseDetails = require('./controllers/HouseDetails');
+var booking = require('./controllers/Booking');
+
+
+
+
+
 // var home = require('/controllers/home');
 
 //CONFIGURE
@@ -16,19 +29,52 @@ app.set('view engine','ejs');
 //MIDDLEWARES
 app.use(bodyParser.urlencoded({extended:false}));
 app.use('/Contents',express.static('Contents'));
+app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, resave: true}));
+
+
+
+app.use('*', function(req, res, next){
+	console.log("Original Url: "+req.originalUrl);
+	if(req.originalUrl.toLowerCase() == '/signin' || req.originalUrl.toLowerCase() == '/favicon.ico/' || req.originalUrl.toLowerCase() == '/signout' || req.originalUrl.toLowerCase() == '/publichome' || req.originalUrl.toLowerCase() == '/housedetails/1')
+	{
+		console.log("req.session.t");
+		next();
+	}
+	else
+	{
+
+		console.log("sd");
+		if(!req.session.userName)
+		{
+			console.log(req.session.username);
+			res.redirect('/signIn');
+			return;
+		}
+		else
+		{
+			next();
+		}
+		
+	}
+});
 
 // ROUTES
 //app.use('/login', login);
 
 
 app.use('/signIn', signIn);
-// app.use('/logout', logout);
-// app.use('/home', home);
+app.use('/signOut', signOut);
+app.use('/publichome', publicHome);
+app.use('/home', home);
+app.use('/houseDetails', houseDetails);
+app.use('/booking', booking);
 
 
 app.get('/',function(req,res)
 {
-	res.render('publicHome');
+
+		res.render('Home');
+
 })
 app.get('/home',function(req,res)
 {

@@ -101,59 +101,54 @@
 									
 									    <td>
 										  <br/>
-										  <h2><b>Rent: Tk 20000/month</b></h2>
-                                          <h4><b>Banani, Dhaka</b></h4>
+										  <h2><b>Rent: Tk <%=result[0].Rent%>/month</b></h2>
+                                          <h4><b><%=result[0].Location%></b></h4>
                                             <a href='https://www.google.com/maps' class=" fa fa-location-arrow" style="cursor: pointer"> View in Map</a>
                                             <hr>
                                           <hr>
 										  <br/>
-										   <img style="border-radius: 7px;" src="/Contents/image/graphics1.jpg" height="350" width="85%" >
+										   <img style="border-radius: 7px;" src="/Contents/image/house/<%=result[0].TitleImage%>" height="350" width="85%" >
 										   
 										  <br/>
 										  
 										  <br/>
-										  
-										  
-										  
+										
 										</td>							
 									</tr>
 									<tr>
-									   
-									
-									
-									</tr>
-									
+								
+									</tr>	
 									
 								</table>
 						    </td>
-						    <td width="1%"><hr width="1" size="1000"></td>
-                            <td width="31%" style="position: fixed; margin-top: 4%">
-                                <center><button class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></center>
-                                <br><br><br>
-                                <div class="box box-info">
-                                <div class="box-header with-border">
-                                  <h3 class="box-title">Contact Property</h3>
-                                </div>
-                                    
-                                <div class="box-header with-border">
-                                  <br><h3 class="box-title"><b>Phone# 01679420786</b></h3><br><br>
-                                </div>
-                                <!-- /.box-header -->
-                                <!-- form start -->
-                                <form class="form-horizontal">
-                                  <div class="box-body">
-                                    
-                                      <div class="col-sm-10">
-                                          Write message in the text area
-                                        <textarea class="form-control" id="message" width="100%"></textarea>
-                                      </div>
-                                      <br><br><br><br><br>
-                                      <button type="submit" class="btn btn-primary pull-right">Send</button>
-                                    </div>
-                     
-                                </form>
+						    <td width="3%"><hr width="1" size="1000"></td>
+                    <td width="31%" style="position: fixed; margin-top: 4%">
+                        <center><a href="/booking/<%=result[0].Id%>"><button class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></a></center>
+                        <br><br><br>
+                        <div class="box box-info">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Contact Property</h3>
+                        </div>
+                            
+                        <div class="box-header with-border">
+                          <br><h3 class="box-title"><b>Phone# <%=result[0].Phone%></b></h3><br><br>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form class="form-horizontal">
+                          <div class="box-body">
+                            
+                              <div class="col-sm-10">
+                                  Write message in the text area
+                                <textarea class="form-control" id="message" width="100%"></textarea>
                               </div>
-                            </td>
+                              <br><br><br><br><br>
+                              <button type="submit" class="btn btn-primary pull-right">Send</button>
+                            </div>
+             
+                        </form>
+                      </div>
+                    </td>
 					    </tr>
 					</table>
 				</td>	
@@ -168,8 +163,8 @@
       <div style="margin-left: 7%;margin-right: 50%">
         <br>
 
-        <h4><b>House Name: </b> Rajjak Vila<br>
-        <b>House Number: </b> ka/129<br></h4>
+        <h4><b>House Name: </b> <%=result[0].HouseName%><br>
+        <b>House Number: </b> <%=result[0].HoldingNumber%><br></h4>
 
         <br><br><br>
         
@@ -184,31 +179,31 @@
                 <tbody>
                 <tr>
                   <td>House Type    </td>
-                  <td><span class="badge bg-red pull-right">Bulding</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].HouseType%></span></td>
                 </tr>
                 <tr>
                   <td>Bed Room</td>
-                  <td><span class="badge bg-yellow pull-right">3</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].BedRoom%></span></td>
                 </tr>
                 <tr>
                   <td>Bath Room</td>
-                  <td><span class="badge bg-light-blue pull-right">2</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].BathRoom%></span></td>
                 </tr>
                 <tr>
                   <td>Area</td>
-                  <td><span class="badge bg-green pull-right">1000 Sq.Ft.</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].Area%></span></td>
                 </tr>
                  <tr>
-                  <td>Belcony</td>
-                  <td><span class="badge bg-green pull-right">2</span></td>
+                  <td>Balcony</td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].Balcony%></span></td>
                 </tr>
                 <tr>
                   <td>Drawing</td>
-                  <td><span class="badge bg-green pull-right">1</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].Drawing%></span></td>
                 </tr>
                 <tr>
                   <td>Dining</td>
-                  <td><span class="badge bg-green pull-right">1</span></td>
+                  <td><span class="badge bg-light-blue pull-right"><%=result[0].Dining%></span></td>
                 </tr>
               </tbody></table>
             </div>
@@ -230,27 +225,58 @@
                 <tbody>
                 <tr>
                   <td>Parking</td>
-                  <td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+				  <%if(result[0].Parking==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
+				  
                 </tr>
                 <tr>
                   <td>Lift</td>
-                  <td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%if(result[0].Lift==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
                 </tr>
                 <tr>
                   <td>Gas</td>
-                  <td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+				  <%if(result[0].Gas==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
                 </tr>
                 <tr>
                   <td>Generator</td>
-                  <td><span class="badge bg-green pull-right">Yes</span></td>
+				  <%if(result[0].Generator==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
                 </tr>
                  <tr>
                   <td>Internet</td>
-                  <td><span class="badge bg-red pull-right pull-right">No</span></td>
+                  <%if(result[0].Internet==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
                 </tr>
                 <tr>
                   <td>Intercom</td>
-                  <td><span class="badge bg-red pull-right pull-right">No</span></td>
+                  <%if(result[0].Intercom==0){%>
+					<td><span class="badge bg-red pull-right pull-right">No</span></td>
+				  <%}
+				  else{%>
+					<td><span class="badge bg-green pull-right pull-right">Yes</span></td>
+					<%}%>
                 </tr>
               </tbody></table>
 
@@ -269,7 +295,8 @@
             <!-- /.box-header -->
             <div class="box-body">
               <dl>
-                Some Note Here
+				          <%=result[0].SpecialNote%>
+                
               </dl>
             </div>
             <!-- /.box-body -->
@@ -325,7 +352,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2017-2018 <a href="home">BasaBari.com</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-2018 <a href="/home">BasaBari.com</a>.</strong> All rights
     reserved.
   </footer>
 </div>
@@ -345,3 +372,22 @@
 <script src="/Contents/dist/js/demo.js"></script>
 </body>
 </html>
+
+<style>
+        textarea
+        {
+            resize: none;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        var textarea = null;
+        window.addEventListener("load", function() {
+            textarea = window.document.querySelector("textarea");
+            textarea.addEventListener("keypress", function() {
+                if(textarea.scrollTop != 0){
+                    textarea.style.height = textarea.scrollHeight + "px";
+                }
+            }, false);
+        }, false);
+    </script>

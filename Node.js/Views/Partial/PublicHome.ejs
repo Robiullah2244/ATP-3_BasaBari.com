@@ -1,0 +1,69 @@
+
+
+  <!-- Full Width Column -->
+  
+  <div style="background-color: white; font-family:times-new-roman" >
+
+		
+		
+		<div  align="center">
+		<div >
+			<header style="background-color: #e6e6ff">
+			<nav class="navbar" style="margin-top:50px">
+			  <div class="container">
+				<div class="navbar-header">
+					<div class="collapse navbar-collapse pull-left" id="navbar-collapse" style="margin-left: 150px;" align="center">
+					  <ul class="nav navbar-nav">
+						<li class="active"><a href="#" style="font-size: 20px" ><b>Banani</b><span class="sr-only">(current)</span></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Bashundhara</b></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Uttara</b></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Nikunjo</b></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Gulshan</b></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Dhanmondi</b></a></li>
+						<li><a href="#" style="font-size: 20px"><b>Khilgaon</b></a></li>
+						
+						
+					  </ul>
+					 
+					</div>
+				</div>
+			  </div>
+			</nav>
+			</header></div>
+		  
+		<br/>
+		<table align="center">
+			<tr>
+			<%
+				var count = 0;
+				result.forEach(function(item) { count++; %>
+
+				<td width="300">
+				  <a href="HouseDetails/<%=item.Id%>"><img src="/Contents/image/house/<%=item.TitleImage%>" class="img"></a>
+				 <br>
+						
+				&nbsp; Posted by: <%=item.UserName%>
+							
+				<br/>
+					&nbsp; Tk <%=item.Rent%>/month
+				<br/>
+					&nbsp; <%=item.Location%>
+                <br/>
+					&nbsp; <%=item.BedRoom%> Bedroom, <%=item.Washroom%> Washroom
+				</td>
+				<%   
+					if(count%4==0){%>
+						</tr><tr height="10px"></tr>
+					<%}})%>
+						
+		
+			
+		</table>
+		
+        <br/>
+        <br/>
+        <br/>
+
+		</div>
+				   
+	
