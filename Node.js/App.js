@@ -65,17 +65,17 @@ app.use('*', function(req, res, next){
 
 
 app.use('/signIn', signIn);
-<<<<<<< HEAD
+
 app.use('/signOut', signOut);
 app.use('/publichome', publicHome);
 app.use('/home', home);
 app.use('/houseDetails', houseDetails);
 app.use('/booking', booking);
-=======
+
 // app.use('/logout', logout);
 // app.use('/home', home);
 app.use('/signUp',signUp);
->>>>>>> 252bef1e179f61ae368849097b24d3a5ebed116d
+
 
 
 app.get('/',function(req,res)
