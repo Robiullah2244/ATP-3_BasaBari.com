@@ -55,7 +55,33 @@ module.exports = {
 			callback(result);
 			
 		});
-	}
+	},
+	
+	increaseViewCount: function(id, callback){
+		
+		var sql = "UPDATE houseinformation SET TotalView = TotalView + 1 WHERE id=?";
+		var sqlParam = [id];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	},
+	
+	getAllPendingRequestByUser: function(userName, callback){
+		
+		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND UserName=?";
+		var sqlParam = [userName,userName];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+		
+		
+	},
 	
 
 	

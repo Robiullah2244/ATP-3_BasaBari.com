@@ -85,54 +85,28 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Post Title</th>
-                  <th>Post Date</th>
-                  <th>Location</th>
+                  <th>Name</th>
                   <th>Rent</th>
-                  <th>Availability</th>
+                  <th>Phone</th>
+                  <th>Request Date</th>
+                  <th>View</th>
+                  <th>Approbation</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Fresh House</td>
-                  <td>3/7/2017</td>
-                  <td>Banani,Dhaka</td>
-                    <td>20000</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                  <td>I will do C</td>
-                  <td>5
-                  </td>
-                  <td>1002</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do JAVA</td>
-                  <td>
-                    55
-                  </td>
-                  <td>1000</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do C#</td>
-                  <td>
-                      6
-                  </td>
-                  <td>1000</td>
-                    <td>2</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do graphics Design</td>
-                  <td> 7</td>
-                  <td>190</td>
-                  <td>1</td>
-                    <td></td>
-                </tr>
+
+                <%
+                  var count = 0;
+                  result.forEach(function(item) { count++; %>
+                    <tr>
+                      <td><%=item.BookUserName%></td>
+                      <td><%=item.Rent%></td>
+                      <td><%=item.Phone%></td>
+                      <td><%=item.BookDate.getDate()%>/<%=item.BookDate.getMonth()%>/<%=item.BookDate.getFullYear()%></td>
+                      <td><a href='/houseDetails/<%=item.HouseId%>'><button class="btn btn-primary">View</button></a> </td>
+                      <td><a href='/approve/<%=item.HouseId%>'><button class="btn btn-primary">Approve</button></a></td>
+                    </tr>
+                    <%})%>
                 
                 </tbody>
                 <tfoot>

@@ -1,4 +1,5 @@
 var express = require('express');
+var alert = require('alert-node');
 var router = express.Router();
 var userModel = require.main.require('./models/user-model');
 
@@ -20,18 +21,24 @@ router.get('/:id', function(req, res){
 		console.log(id);
 		var insertIntoBookingTable = function(){userModel.booking(id, postUserName, bookUserName, function(result)
 		{
-			console.log(result);
-			console.log(postUserName);
+			alert("successfully Booked");
 			res.redirect('/home');
 
 		})};
 		
 		retrivePostUser(insertIntoBookingTable);
+		
 	}
 	
 	else
 	{
-		res.redirect('/home/'+id);
+		
+		alert("Signin to Book House");
+	
+		res.redirect('/publichome');
+		
+
+		
 	}
 	
 	

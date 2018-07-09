@@ -23,21 +23,7 @@ router.post('/', function(req, res){
 			 var error = {error: "Invalid User Name or Password"};
 			 res.render('SignIn',error);
 		}
-		
-		// if(!status)
-		// {
-			// var error = {error: "Invalid User Name or Password"};
-			// res.render('SignIn',error);
-			
-		// }
-		// else
-		// {
-			// req.session.userName = un;
-			// console.log(req.session.userName+"session check"+un);
-			//req.session.userType = result.type;
-			//console.log('sds');
-			// res.redirect('/home');
-		// }
+	
 	});
 	
 });

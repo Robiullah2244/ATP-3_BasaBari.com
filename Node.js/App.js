@@ -16,8 +16,7 @@ var publicHome = require('./controllers/PublicHome');
 var home = require('./controllers/Home');
 var houseDetails = require('./controllers/HouseDetails');
 var booking = require('./controllers/Booking');
-
-
+var userPendingRequest = require('./controllers/UserPendingRequest');
 
 
 
@@ -35,9 +34,14 @@ app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, r
 
 
 
+
+app.use('/houseDetails', houseDetails);
+app.use('/booking', booking);
+
 app.use('*', function(req, res, next){
 	console.log("Original Url: "+req.originalUrl);
-	if(req.originalUrl.toLowerCase() == '/signin' || req.originalUrl.toLowerCase() == '/favicon.ico/' || req.originalUrl.toLowerCase() == '/signout' || req.originalUrl.toLowerCase() == '/publichome' || req.originalUrl.toLowerCase() == '/housedetails/1')
+	url= req.originalUrl.toLowerCase();
+	if(url == '/signin' || url == '/favicon.ico/' || url == '/signout' || url == '/publichome')
 	{
 		console.log("req.session.t");
 		next();
@@ -69,8 +73,10 @@ app.use('/signIn', signIn);
 app.use('/signOut', signOut);
 app.use('/publichome', publicHome);
 app.use('/home', home);
-app.use('/houseDetails', houseDetails);
-app.use('/booking', booking);
+app.use('/userPendingRequest', userPendingRequest);
+
+
+
 
 // app.use('/logout', logout);
 // app.use('/home', home);
@@ -137,10 +143,7 @@ app.get('/signin',function(req,res)
 // {
 // 	res.render('signup');
 // })
-app.get('/userPendingPosts',function(req,res)
-{
-	res.render('userPendingPosts');
-})
+
 app.get('/UserBalanceReport',function(req,res)
 {
 	res.render('UserBalanceReport');

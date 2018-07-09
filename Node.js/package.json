@@ -9,6 +9,7 @@
   "author": "Tanim, Robi",
   "license": "ISC",
   "dependencies": {
+    "alert-node": "^1.2.1",
     "async-validator": "^1.8.2",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
