@@ -46,66 +46,39 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
     <!-- Content Header (Page header) -->
     <section class="content">
- 		<table border="0">
-	
-	
-	<tr height="600">
-		<td width="1%"></td>
-		<td valign="top" align="center" width="20%">
+ 	    <div style="margin-left: 30%;margin-right: 30%;margin-top: 40px"> 
 			<div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="/contents/image/User/Md. Robi Ullah.jpg" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="/contents/image/User/<%=result[0].UserName%>.jpg" alt="User profile picture">
 
-              <h3 class="profile-username text-center">Md. Robi Ullah</h3>
+              <h3 class="profile-username text-center"><%=result[0].Name%></h3>
 
-              <p class="text-muted text-center">Software Engineer</p>
                 <ul class="list-group list-group-unbordered">
                  <li class="list-group-item">
-                   <b class="pull-left">Joining Dtae</b> <a class="pull-right">13/5/2017</a><br>
+                   <b class="pull-left">Joining Date</b> <a class="pull-right"><%=result[0].JoiningDate.getDate()%>/<%=result[0].JoiningDate.getMonth()%>/<%=result[0].JoiningDate.getFullYear()%></a><br>
                  </li>
                  <li class="list-group-item">
-                    <b class="pull-left">Phone#</b> <a class="pull-right">01679420786</a><br>
+                    <b class="pull-left">Phone#</b> <a class="pull-right"><%=result[0].Phone%></a><br>
                  </li>
                 <li class="list-group-item">
-                  <b class="pull-left">Email</b> <a class="pull-right">Robiullah2244@gmail.com</a><br>
+                  <b class="pull-left">Email</b> <a class="pull-right"><%=result[0].Email%></a><br>
                 </li>
                 <li class="list-group-item">
-                  <b class="pull-left">Total Post</b> <a class="pull-right">43</a><br>
+                  <b class="pull-left">Address</b> <a class="pull-right"><%=result[0].Address%></a><br>
                 </li>
                 <li class="list-group-item">
                   <b class="pull-left">Address</b> <a class="pull-right">Kuril,Dhaka</a><br>
                 </li>
               </ul>
 
-              <a href="UserSettings" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
+              <div class="btn btn-primary btn-block"><b></b></div>
             </div>
             <!-- /.box-body -->
           </div>
-			
-		</td>
-		<td width="5%"></td>
-		<td width="60%" valign="top">
-            <h1>Active Gigs	</h1><br/><br/>
-            <table cellspacing="40">
-            <tr>
-                <td width="20%">	
-                    <img src="/contents/image/project1.jpg" width="100%"/><br/><br/>
-                    <a href="HouseDetails">I will do c or c++ project for you.</a>
-                </td>
-                <td>	
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="/contents/image/addgig.png"/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="AddPost"><button class="btn btn-primary" style="width: 125px">Add a Post</button></a>
-                </td>
-
-            </tr>
-            </table>
-		</td>
-	</tr>
-
-</table>
+          </div>
 </section>
   </div>
   <!-- /.content-wrapper -->
@@ -114,7 +87,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-2018 <a href="/home">BasaBari.com</a>.</strong> All rights
     reserved.
   </footer>
 

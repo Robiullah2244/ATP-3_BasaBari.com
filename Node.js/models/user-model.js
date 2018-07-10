@@ -69,10 +69,53 @@ module.exports = {
 		});
 	},
 	
-	getAllPendingRequestByUser: function(userName, callback){
+	getAllPendingRequestInformationByUserName: function(userName, callback){
 		
-		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND UserName=?";
-		var sqlParam = [userName,userName];
+		var sql = "SELECT Book.BookUserName,Book.PostUserName,Rent,HouseName,BookDate,HouseId,Book.Id FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=?";
+		
+		
+		var sqlParam = [userName,userName,0];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	
+	},
+	
+	setHouseAvailabilityToZero: function(id, callback){
+		
+		var sql = "UPDATE houseinformation SET Availability = 0 WHERE id=?";
+		var sqlParam = [id];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	
+	},
+	
+	
+	setBookStatusToOne: function(id, callback){
+		
+		var sql = "UPDATE Book SET BookStatus = ? WHERE id=?";
+		var sqlParam = [1,id];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	
+	},
+	
+	
+	deleteFromBookingTable: function(id, callback){
+		
+		var sql = "Delete From book WHERE HouseId=? AND BookStatus=?";
+		var sqlParam = [id,0];
 		
 		db.executeQuery(sql, sqlParam, function(result){
 			
@@ -80,8 +123,38 @@ module.exports = {
 			
 		});
 		
+	},
+	
+	getUserByUserName: function(userName, callback){
+		
+		var sql = "SELECT * FROM User WHERE UserName=? ";
+		
+		
+		var sqlParam = [userName];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
 		
 	},
+	
+	getAllApprovedRequestInformationByUserName: function(userName, callback){
+		
+		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=?";
+		
+		
+		var sqlParam = [userName,userName,1];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	
+	},
+	
 	
 
 	

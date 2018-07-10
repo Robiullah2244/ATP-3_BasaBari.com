@@ -17,6 +17,9 @@ var home = require('./controllers/Home');
 var houseDetails = require('./controllers/HouseDetails');
 var booking = require('./controllers/Booking');
 var userPendingRequest = require('./controllers/UserPendingRequest');
+var approve = require('./controllers/approve');
+var userProfile = require('./controllers/userProfile');
+var userApprovedRequest = require('./controllers/UserApprovedRequest');
 
 
 
@@ -81,6 +84,9 @@ app.use('/signOut', signOut);
 app.use('/publichome', publicHome);
 app.use('/home', home);
 app.use('/userPendingRequest', userPendingRequest);
+app.use('/approve', approve);
+app.use('/userProfile', userProfile);
+app.use('/UserApprovedRequest', userApprovedRequest);
 
 
 

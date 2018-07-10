@@ -6,9 +6,9 @@ router.get('/', function(req, res){
 	//res.render('UserPendingRequest');
 
 	
-	userModel.getAllPendingRequestInformationByUserName(req.session.userName, function(result){
+	userModel.getAllApprovedRequestInformationByUserName(req.session.userName, function(result){
 		console.log(result);
-		res.render("UserPendingRequest",{result:result});
+		res.render("UserApprovedRequest",{result:result});
 
 	});
 	

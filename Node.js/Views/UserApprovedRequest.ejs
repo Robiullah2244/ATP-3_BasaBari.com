@@ -86,10 +86,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
+                  <th>House Name</th>
                   <th>Rent</th>
                   <th>Request Date</th>
                   <th>View</th>
-                  <th>Approbation</th>
+                  
                 </tr>
                 </thead>
                 <tbody>
@@ -98,10 +99,11 @@
                   result.forEach(function(item) { %>
                     <tr>
                       <td><a style="cursor: pointer;" href="userProfile/<%=item.BookUserName%>"><%=item.BookUserName%></a></td>
+                      <td><%=item.HouseName%></td>
                       <td><%=item.Rent%></td>
                       <td><%=item.BookDate.getDate()%>/<%=item.BookDate.getMonth()%>/<%=item.BookDate.getFullYear()%></td>
                       <td><a href='/houseDetails/<%=item.HouseId%>'><button class="btn btn-primary">View</button></a> </td>
-                      <td><button class="btn btn-primary" onclick="ConfirmationToApprove('<%=item.HouseId%>','<%=item.Id%>')">Approve</button></td>
+                      
                     </tr>
                     <%})%>
                 

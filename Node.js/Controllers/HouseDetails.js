@@ -12,7 +12,8 @@ router.get('/:id', function(req, res){
 	
 	userModel.getPostById(id, function(result){
 		console.log(result);
-		res.render('HouseDetails',{result : result});
+		var signedInUser = req.session.userName;
+		res.render('HouseDetails',{result : result, signedInUser: signedInUser});
 
 	});
 	
