@@ -123,8 +123,12 @@
 								</table>
 						    </td>
 						    <td width="3%"><hr width="1" size="1000"></td>
+
+
+                  <%if(signedInUser == result.Username){%>}
+
                     <td width="31%" style="position: fixed; margin-top: 4%">
-                        <center><a href="/booking/<%=result[0].Id%>"><button class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></a></center>
+                        <center><button onclick="Book('<%=result[0].Id%>')" class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></center>
                         <br><br><br>
                         <div class="box box-info">
                         <div class="box-header with-border">
@@ -150,6 +154,18 @@
                         </form>
                       </div>
                     </td>
+                    <%}
+
+                    else{%>
+
+                      <td width="31%" style="position: fixed; margin-top: 4%">
+                        <center><button onclick="Book('<%=result[0].Id%>')" class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">Delete</button></center>
+                        
+                    </td>
+
+                  <%}%>
+                    
+
 					    </tr>
 					</table>
 				</td>	
@@ -346,7 +362,7 @@
       
 	</div>
 
-				   
+	<div id="ConfirmationMassage"></div>  
 
   <!-- /.content-wrapper -->
 <footer class="main-footer">
@@ -392,3 +408,44 @@
             }, false);
         }, false);
     </script>
+
+<script type="text/javascript">
+  
+
+  function confirm(id)
+  {
+    url = "/booking/"+id;
+    document.getElementById("ConfirmationMassage").innerHTML="";
+    window.location.href = url;
+  }
+  function hide(id)
+  {
+    document.getElementById("ConfirmationMassage").innerHTML="";
+  }
+
+  function Book(id)
+  {
+    document.getElementById("ConfirmationMassage").innerHTML=""+
+    "<div class='modal modal-info fade in' id='modal-info' style='display: block; padding-right: 17px;'>"+
+      "<div class='modal-dialog'>"+
+      "<div class='modal-content'>"+
+        "<div class='modal-header'>"+
+        "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
+          "<span aria-hidden='true' onclick='hide()'>×</span></button>"+
+        "<h4 class='modal-title'>Confirmation</h4>"+
+        "</div>"+
+        "<div class='modal-body'>"+
+        "<p><h3>Do you want to Book?</h3></p>"+
+        "</div>"+
+        "<div class='modal-footer'>"+
+        "<button type='button' class='btn btn-outline pull-left' data-dismiss='modal' onclick='hide()'>Cencel</button>"+
+        "<button type='button' class='btn btn-outline'  onclick='confirm("+id+")'>Book</button>"+
+        "</div>"+
+      "</div>"+
+      "<!-- /.modal-content -->"+
+      "</div>"+
+      "<!-- /.modal-dialog -->"+
+    "</div>";
+  }
+
+</script>
