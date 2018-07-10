@@ -11,6 +11,21 @@ module.exports = {
 		db.executeQuery(sql2, [userName,name,email], function(result){
 			callback(result);
 		});
+	},
+	getMaxHouseInformationId: function(callback){
+		var sql = "SELECT MAX(id) maxID  from houseinformation";
+		db.executeQuery(sql, null, function(result){
+			callback(result)
+		});
+	},
+	addPostToDb:function(userName,d,callback){
+		var sql = "INSERT INTO houseinformation VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		console.log(d+"INSERTted");
+		db.executeQuery(sql, [userName,d.location,d.holdingNumber,d.rent,d.houseType,d.bedroom,
+		d.bathroom,d.area,d.balcony,d.drawingroom,d.diningroom,d.parking,d.lift,d.gas,d.generator,d.internet,d.intercom,
+		d.mobileNo,d.specialNote,d.houseName,d.postDate,d.houseImageName,0,1], function(result){
+			callback(result);
+		});
 	}
 };
 
