@@ -27,6 +27,8 @@ var deletePost = require('./controllers/DeletePost');
 
 var signUp = require('./Controllers/SignUp');
 var addPost = require('./Controllers/AddPost');
+var userDashboard=require('./Controllers/userDashboard');
+var userAllPosts=require('./Controllers/userAllPosts');
 
 
 //CONFIGURE
@@ -42,9 +44,15 @@ app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, r
 
 app.use('/signUp',signUp);
 app.use('/addPost',addPost);
+app.use('/userDashboard',userDashboard);
+app.use('/userAllPosts',userAllPosts);
 // app.get('/addpost',function(req,res)
 // {
 // 	res.render('addpost');
+// })
+// app.get('/UserDashBoard',function(req,res)
+// {
+// 	res.render('UserDashBoard');
 // })
 
 app.use('/houseDetails', houseDetails);
@@ -119,10 +127,7 @@ app.get('/HouseDetails',function(req,res)
 {
 	res.render('HouseDetails');
 })
-app.get('/UserDashBoard',function(req,res)
-{
-	res.render('UserDashBoard');
-})
+
 app.get('/userAllPosts',function(req,res)
 {
 	res.render('userAllPosts');
