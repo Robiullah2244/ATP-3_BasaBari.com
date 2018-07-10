@@ -15,6 +15,7 @@ router.post('/', function(req, res){
 		
 		if(status)
 		{
+			
 			req.session.userName = un;
 			res.redirect('/home');
 		}

@@ -7,7 +7,7 @@ router.get('/', function(req, res){
 	
 	userModel.getUserByUserName(req.session.userName, function(result){
 		console.log(result);
-		res.render("UserProfile",{result:result});
+		res.render("UserProfile",{signedInUser : req.session.userName, result:result});
 
 	});
 	
@@ -19,7 +19,7 @@ router.get('/:userName', function(req, res){
 	
 	userModel.getUserByUserName(userName, function(result){
 		console.log(result);
-		res.render("UserProfileFromAnotherUser",{result:result});
+		res.render("UserProfileFromAnotherUser",{signedInUser : req.session.userName, result:result});
 
 	});
 	

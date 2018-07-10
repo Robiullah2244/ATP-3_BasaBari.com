@@ -7,7 +7,7 @@ router.get('/', function(req, res){
 	userModel.getAllAvailablePost(function(result){
 		
 		req.session.houseInformation = result;
-		res.render('home',{result : result});
+		res.render('home',{signedInUser : req.session.userName,  result : result});
 		
 		
 	});

@@ -6,7 +6,13 @@ router.get('/', function(req, res){
 
 	userModel.getAllAvailablePost(function(result){
 		
-		res.render('publichome',{result : result});
+		if(typeof req.session.userName == 'undefined')
+		{
+			res.render('publichome',{result : result});
+		}
+		else
+			res.redirect('/home');
+		
 
 	});
 	

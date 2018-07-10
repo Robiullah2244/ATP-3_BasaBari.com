@@ -9,7 +9,6 @@ var expressSession = require('express-session');
 
 
 
-
 var signIn = require('./controllers/SignIn');
 var signOut = require('./controllers/SignOut');
 var publicHome = require('./controllers/PublicHome');
@@ -37,6 +36,8 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use('/Contents',express.static('Contents'));
 app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, resave: true}));
+
+
 
 
 app.use('/signUp',signUp);

@@ -8,7 +8,7 @@ router.get('/', function(req, res){
 	
 	userModel.getAllApprovedRequestInformationByUserName(req.session.userName, function(result){
 		console.log(result);
-		res.render("UserApprovedRequest",{result:result});
+		res.render("UserApprovedRequest",{signedInUser : req.session.userName, result:result});
 
 	});
 	

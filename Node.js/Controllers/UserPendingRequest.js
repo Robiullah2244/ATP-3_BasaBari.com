@@ -8,7 +8,7 @@ router.get('/', function(req, res){
 	
 	userModel.getAllPendingRequestInformationByUserName(req.session.userName, function(result){
 		console.log(result);
-		res.render("UserPendingRequest",{result:result});
+		res.render("UserPendingRequest",{signedInUser : req.session.userName, result:result});
 
 	});
 	

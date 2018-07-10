@@ -443,9 +443,15 @@
   
 
   
-  function hide(id)
+  function hide()
   {
     document.getElementById("ConfirmationMassage").innerHTML="";
+  }
+  function SignIn()
+  {
+    var url = "/Signin";
+    document.getElementById("ConfirmationMassage").innerHTML="";
+    window.location.href = url;
   }
   
   function SignInToBook()
@@ -464,7 +470,7 @@
         "</div>"+
         "<div class='modal-footer'>"+
         "<button type='button' class='btn btn-outline pull-left' data-dismiss='modal' onclick='hide()'>Close</button>"+
-        "<button type='button' class='btn btn-outline'  onclick='hide()'>Close</button>"+
+        "<button type='button' class='btn btn-outline'  onclick='SignIn()'>SignIn</button>"+
         "</div>"+
       "</div>"+
       "<!-- /.modal-content -->"+

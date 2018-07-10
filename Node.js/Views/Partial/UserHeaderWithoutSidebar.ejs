@@ -30,7 +30,7 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img src="/Contents/image/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="/Contents/image/user/<%=signedInUser%>.jpg" class="img-circle" alt="User Image">
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
@@ -45,7 +45,7 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="Messenger">See All Messages</a></li>
+                <li class="footer"><a href="/Messenger">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -70,7 +70,7 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer"><a href="Notification">View all</a></li>
+                <li class="footer"><a href="/Notification">View all</a></li>
               </ul>
             </li>
             
@@ -79,7 +79,7 @@
 			
 			<li class="dropdown tasks-menu">
               <!-- Menu Toggle Button -->
-              <a href="UserDashBoard" class="fa  fa-dashboard (alias)">
+              <a href="/UserDashBoard" class="fa  fa-dashboard (alias)">
                
                 
               </a>
@@ -94,39 +94,24 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="/Contents/image/User/Md. Robi Ullah.jpg" class="user-image" alt="User Image">
+                <img src="/Contents/image/User/<%=signedInUser%>.jpg" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Md. Robi Ullah</span>
+                <span class="hidden-xs"><%=signedInUser%></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="/Contents/image/User/Md. Robi Ullah.jpg" class="img-circle" alt="User Image">
+                  <img src="/Contents/image/User/<%=signedInUser%>.jpg" class="img-circle" alt="User Image">
 
                   <p>
-                    Md. Robi Ullah
-                    <small>Member since Nov. 2012</small>
+                    <%=signedInUser%>
                   </p>
                 </li>
-                <!-- Menu Body -->
-                <li class="user-body">
-                  <div class="row">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </div>
-                  <!-- /.row -->
-                </li>
+         
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="userProfile" class="btn btn-default btn-flat">Profile</a>
+                    <a href="/userProfile" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="/PublicHome" class="btn btn-default btn-flat">Sign out</a>

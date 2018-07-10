@@ -16,7 +16,7 @@ router.get('/:id', function(req, res){
 		if(typeof signedInUser != 'undefined')
 		{
 			console.log("signedInUser: "+signedInUser+"   u: "+result[0].UserName);
-			res.render('HouseDetails',{result : result, signedInUser: signedInUser});
+			res.render('HouseDetails',{signedInUser: signedInUser, result : result});
 		}
 		else
 		{
