@@ -27,6 +27,8 @@ var deletePost = require('./controllers/DeletePost');
 // var home = require('/controllers/home');
 
 var signUp = require('./Controllers/SignUp');
+var addPost = require('./Controllers/AddPost');
+
 
 //CONFIGURE
 app.set('view engine','ejs');
@@ -38,7 +40,11 @@ app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, r
 
 
 app.use('/signUp',signUp);
-
+app.use('/addPost',addPost);
+// app.get('/addpost',function(req,res)
+// {
+// 	res.render('addpost');
+// })
 
 app.use('/houseDetails', houseDetails);
 app.use('/booking', booking);
