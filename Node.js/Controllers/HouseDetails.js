@@ -17,6 +17,7 @@ router.get('/:id', function(req, res){
 		{
 			console.log("signedInUser: "+signedInUser+"   u: "+result[0].UserName);
 			res.render('HouseDetails',{signedInUser: signedInUser, result : result});
+		}
 
 		else
 		{
