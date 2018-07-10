@@ -2,13 +2,13 @@ var db = require('./db');
 module.exports = {
 	insertUsertoSignIn: function(userName, name,email,password, callback){
 		var sql = "INSERT INTO signin VALUES (?,?,2)";
-		db.executeQuery(sql, [userName,password], function(result){
+		db.executeQuery(sql, [userName.toLowerCase(),password], function(result){
 			callback(result);
 		});
 	},
 	insertUser: function(userName, name,email,password, callback){
 		var sql2="INSERT INTO user(UserName, Name,Email) VALUES(?,?,?) ";
-		db.executeQuery(sql2, [userName,name,email], function(result){
+		db.executeQuery(sql2, [userName.toLowerCase(),name,email], function(result){
 			callback(result);
 		});
 	},
@@ -25,6 +25,18 @@ module.exports = {
 		d.bathroom,d.area,d.balcony,d.drawingroom,d.diningroom,d.parking,d.lift,d.gas,d.generator,d.internet,d.intercom,
 		d.mobileNo,d.specialNote,d.houseName,d.postDate,d.houseImageName,0,1], function(result){
 			callback(result);
+		});
+	},
+	getNumberOfPostByUserName: function(userName,callback){
+		var sql = "SELECT count(*) numberOfPost  from houseinformation where UserName=?";
+		db.executeQuery(sql, [userName], function(result){
+			callback(result)
+		});
+	},
+	getAllPostByUserName: function(userName,callback){
+		var sql = "SELECT * from houseinformation where UserName=?";
+		db.executeQuery(sql, [userName], function(result){
+			callback(result)
 		});
 	}
 };

@@ -47,7 +47,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Post Title</th>
+                  <th>House Title</th>
                   <th>Post Date</th>
                   <th>Location</th>
                   <th>Rent</th>
@@ -55,56 +55,29 @@
                 </tr>
                 </thead>
                 <tbody>
+                  <% userAllPosts.forEach(function(item){%>
                 <tr>
-                  <td>Fresh House</td>
-                  <td>3/7/2017</td>
-                  <td>Banani,Dhaka</td>
-                    <td>20000</td>
-                    <td>No</td>
+                  <td><%=item.HouseName%></td>
+                  <td><%=item.PostDate.getDate()%>/<%=item.PostDate.getMonth()%>/<%=item.PostDate.getFullYear()%></td>
+                  <td><%=item.Location%></td>
+                    <td><%=item.Rent%></td>
+                    <td><%if(item.Availability=='1'){%>
+                        yes
+                    <%}else{%>
+                      NO
+                    <%}%></td>
                 </tr>
-                <tr>
-                  <td>I will do C</td>
-                  <td>5
-                  </td>
-                  <td>1002</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do JAVA</td>
-                  <td>
-                    55
-                  </td>
-                  <td>1000</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do C#</td>
-                  <td>
-                      6
-                  </td>
-                  <td>1000</td>
-                    <td>2</td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td>I will do graphics Design</td>
-                  <td> 7</td>
-                  <td>190</td>
-                  <td>1</td>
-                    <td></td>
-                </tr>
-                
+                <% } )%>
+
                 </tbody>
                 <tfoot>
-               <tr>
-                  <th>Gig Name</th>
-                  <th>Number Of Order Completed</th>
-                  <th>Gig Price</th>
-                   <th>Total Earned From This Gig</th>
-                   <th>Category</th>
-                </tr>
+                  <tr>
+                    <th>House Title</th>
+                    <th>Post Date</th>
+                    <th>Location</th>
+                    <th>Rent</th>
+                    <th>Availability</th>
+                  </tr>
                 </tfoot>
               </table>
             </div>
