@@ -20,6 +20,7 @@ var userPendingRequest = require('./controllers/UserPendingRequest');
 var approve = require('./controllers/approve');
 var userProfile = require('./controllers/userProfile');
 var userApprovedRequest = require('./controllers/UserApprovedRequest');
+var deletePost = require('./controllers/DeletePost');
 
 
 
@@ -81,6 +82,7 @@ app.use('/userPendingRequest', userPendingRequest);
 app.use('/approve', approve);
 app.use('/userProfile', userProfile);
 app.use('/UserApprovedRequest', userApprovedRequest);
+app.use('/DeletePost', deletePost);
 
 
 

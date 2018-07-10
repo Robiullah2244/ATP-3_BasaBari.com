@@ -155,6 +155,31 @@ module.exports = {
 	
 	},
 	
+	deleteFromHouseInformationByHouseId: function(id, callback){
+		
+		var sql = "Delete From HouseInformation WHERE Id=?";
+		var sqlParam = [id];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+		
+	},
+	
+	deleteBookingByHouseId: function(id, callback){
+		
+		var sql = "Delete From Book WHERE HouseId=? AND BookStatus=?";
+		var sqlParam = [id,0];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+		
+	},
 	
 
 	

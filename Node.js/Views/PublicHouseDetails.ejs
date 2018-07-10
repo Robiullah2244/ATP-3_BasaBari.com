@@ -74,7 +74,52 @@
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
-  <%- include partial/UserHeaderWithoutSidebar.ejs %>
+  <header class="main-header">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/publicHome" ><img width="100" height= "45" src="/Contents/image/logo.png"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          
+          <ul class="nav navbar-nav">
+
+      
+      <!------------------ Sign In --------------------->
+      
+      <li class="dropdown tasks-menu">
+              <!-- Menu Toggle Button -->
+              <a href="/Signin"> <button class="btn btn-primary">Signin</button>
+               
+                
+              </a>
+              
+            </li>
+      
+              <!------------------ Sign Out --------------------->
+              
+              <li class="dropdown tasks-menu">
+              <!-- Menu Toggle Button -->
+              <a href="/Signup"> <button class="btn btn-primary">Signup</button>
+               
+                
+              </a>
+              
+            </li>
+
+          </ul>
+        </div>
+        <!-- /.navbar-custom-menu -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
   
   <div class="box box-primary" style="background-color: white; font-family:times-new-roman" >
 
@@ -124,11 +169,8 @@
 						    </td>
 						    <td width="3%"><hr width="1" size="1000"></td>
 
-
-                  <%if(signedInUser != result[0].UserName.toLowerCase()){%>
-
                     <td width="31%" style="position: fixed; margin-top: 4%">
-                        <center><button onclick="Book('<%=result[0].Id%>')" class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></center>
+                        <center><button onclick="SignInToBook()" class="btn btn-primary" style="width: 100px;height: 50px ;font-size: 20px;">BOOK</button></center>
                         <br><br><br>
                         <div class="box box-info">
                         <div class="box-header with-border">
@@ -154,17 +196,6 @@
                         </form>
                       </div>
                     </td>
-                    <%}
-
-                    else{%>
-                      <td width="31%" style="position: fixed; margin-top: 12%">
-                        <center><button onclick="DeletePost('<%=result[0].Id%>')" class="btn btn-danger btn-block" style="width: 100px;height: 50px ;font-size: 20px;">Delete</button></center>
-                        
-                    </td>
-
-                  <%}%>
-                  
-
 					    </tr>
 					</table>
 				</td>	
@@ -368,7 +399,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2017-2018 <a href="/home">BasaBari.com</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-2018 <a href="/publichome">BasaBari.com</a>.</strong> All rights
     reserved.
   </footer>
 </div>
@@ -411,24 +442,13 @@
 <script type="text/javascript">
   
 
-  function ConfirmBoook(id)
-  {
-    var url = "/booking/"+id;
-    document.getElementById("ConfirmationMassage").innerHTML="";
-    window.location.href = url;
-  }
+  
   function hide(id)
   {
     document.getElementById("ConfirmationMassage").innerHTML="";
   }
-  function ConfirmDelete(id)
-  {
-    var url = "/deletePost/"+id+"/"+"<%=result[0].UserName%>";
-    document.getElementById("ConfirmationMassage").innerHTML="";
-    window.location.href = url;
-  }
-
-  function Book(id)
+  
+  function SignInToBook()
   {
     document.getElementById("ConfirmationMassage").innerHTML=""+
     "<div class='modal modal-info fade in' id='modal-info' style='display: block; padding-right: 17px;'>"+
@@ -437,14 +457,14 @@
         "<div class='modal-header'>"+
         "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
           "<span aria-hidden='true' onclick='hide()'>×</span></button>"+
-        "<h4 class='modal-title'>Confirmation</h4>"+
+        "<h4 class='modal-title'></h4>"+
         "</div>"+
         "<div class='modal-body'>"+
-        "<p><h3>Do you want to Book?</h3></p>"+
+        "<p><h3>Signin to Book</h3></p>"+
         "</div>"+
         "<div class='modal-footer'>"+
-        "<button type='button' class='btn btn-outline pull-left' data-dismiss='modal' onclick='hide()'>Cencel</button>"+
-        "<button type='button' class='btn btn-outline'  onclick='ConfirmBoook("+id+")'>Book</button>"+
+        "<button type='button' class='btn btn-outline pull-left' data-dismiss='modal' onclick='hide()'>Close</button>"+
+        "<button type='button' class='btn btn-outline'  onclick='hide()'>Close</button>"+
         "</div>"+
       "</div>"+
       "<!-- /.modal-content -->"+
@@ -453,30 +473,5 @@
     "</div>";
   }
 
-
-  function DeletePost(id)
-  {
-    document.getElementById("ConfirmationMassage").innerHTML=""+
-    "<div class='modal modal-info fade in' id='modal-info' style='display: block; padding-right: 17px;'>"+
-      "<div class='modal-dialog'>"+
-      "<div class='modal-content'>"+
-        "<div class='modal-header'>"+
-        "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
-          "<span aria-hidden='true' onclick='hide()'>×</span></button>"+
-        "<h4 class='modal-title'>Confirmation</h4>"+
-        "</div>"+
-        "<div class='modal-body'>"+
-        "<p><h3>Do you want to Delete?</h3></p>"+
-        "</div>"+
-        "<div class='modal-footer'>"+
-        "<button type='button' class='btn btn-outline pull-left' data-dismiss='modal' onclick='hide()'>Cencel</button>"+
-        "<button type='button' class='btn btn-outline'  onclick='ConfirmDelete("+id+")'>Delete</button>"+
-        "</div>"+
-      "</div>"+
-      "<!-- /.modal-content -->"+
-      "</div>"+
-      "<!-- /.modal-dialog -->"+
-    "</div>";
-  }
 
 </script>
