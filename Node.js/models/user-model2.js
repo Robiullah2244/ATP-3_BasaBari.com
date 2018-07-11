@@ -44,6 +44,12 @@ module.exports = {
 		db.executeQuery(sql, null, function(result){
 			callback(result)
 		});
+	},
+	getAllContactListByUserName: function(userName,callback){
+		var sql = "SELECT * FROM message where fromUser=? or toUser=?";
+		db.executeQuery(sql, [userName,userName], function(result){
+			callback(result)
+		});
 	}
 
 };
