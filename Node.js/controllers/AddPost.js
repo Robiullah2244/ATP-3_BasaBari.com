@@ -25,7 +25,7 @@ var validationRules = require.main.require('./validation_rules/rules');
 // console.log(x.toISOString()+"outside");
 var asyncValidator = require('async-validator');
 router.get('/', function(req, res) {
-  res.render('AddPost', {signedInUser : req.session.userName,  
+  res.render('AddPost', {signedInUser : req.session.userName,
     PostData: [],
     errs: []
   });
@@ -36,7 +36,7 @@ router.post('/', upload.single('houseImage'), function(req, res) {
   var rules = validationRules.AddPost;
   // console.log(req.file);
   // console.log(x+"inside");
-  var userName ='tanim';//req.session.userName;
+  var userName =req.session.userName;
   console.log(req.file);
   var houseImageName=formatted.toString() + "." + req.file.mimetype.substring(6);
   var nowDate = datetime.create();

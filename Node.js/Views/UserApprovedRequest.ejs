@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Data Tables</title>
+  <title>BasaBari.com | Data Tables</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -90,7 +90,7 @@
                   <th>Rent</th>
                   <th>Request Date</th>
                   <th>View</th>
-                  
+
                 </tr>
                 </thead>
                 <tbody>
@@ -103,10 +103,10 @@
                       <td><%=item.Rent%></td>
                       <td><%=item.BookDate.getDate()%>/<%=item.BookDate.getMonth()%>/<%=item.BookDate.getFullYear()%></td>
                       <td><a href='/houseDetails/<%=item.HouseId%>'><button class="btn btn-primary">View</button></a> </td>
-                      
+
                     </tr>
                     <%})%>
-                
+
                 </tbody>
                 <tfoot>
                <tr>
@@ -367,12 +367,12 @@
 </script>
  <script>
 
- 
+
  function hide()
  {
 	document.getElementById("promotion").innerHTML="";
  }
- 
+
  function approve(houseId,bookId)
  {
   var url = "/approve/"+houseId+"/"+bookId;
@@ -384,7 +384,7 @@
  {
 	document.getElementById("promotion").innerHTML="";
  }
-     
+
  function Withdraw()
  {
 	document.getElementById("promotion").innerHTML=""+
@@ -410,8 +410,8 @@
 	  "<!-- /.modal-dialog -->"+
 	"</div>";
  }
-	
-     
+
+
 function ConfirmationToApprove(houseId,bookId)
  {
   document.getElementById("promotion").innerHTML=""+
@@ -436,7 +436,7 @@ function ConfirmationToApprove(houseId,bookId)
     "<!-- /.modal-dialog -->"+
   "</div>";
  }
-	
+
  </script>
 </body>
 </html>

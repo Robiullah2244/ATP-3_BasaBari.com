@@ -16,7 +16,7 @@ module.exports = {
 		bedroom:{required:true,pattern:/^[0-9]/},
 		bathroom:{required:true, pattern:/^[0-9]/},
 		balcony:{required:true,pattern:/^[0-9]/},
-		mobileNo:{required:true,pattern:/^[0-9-+]/},
+		mobileNo:{len:11,required:true,pattern:/^[0-9-+]/},
 		drawingroom:{required:true},
 		diningroom:{required:true},
 		lift:{required:true},

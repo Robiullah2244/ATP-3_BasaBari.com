@@ -5,7 +5,7 @@ var userModel = require.main.require('./models/user-model2');
   var i=0;
 router.get('/', function(req, res){
   // res.render('SignUp',{SignUpData:[],errs:[]});
-    var userName ='tanim';//req.session.userName;
+    var userName =req.session.userName;
     var popularLocation=["Banani","Bashundhar","Nikunjo","Dhanmondi","Glushan","Uttara","Khilgaon","Mirpur","Farmgate"]
     // console.log(req.session.userName+"Session userName");
   // userModel.getNumberOfPostByUserName(userName,function(result){

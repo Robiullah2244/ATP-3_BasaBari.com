@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Collapsed Sidebar Layout</title>
+  <title>BasaBari.com | Collapsed Sidebar Layout</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -27,20 +27,20 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  
+
 </head>
 <!-- ADD THE CLASS sidebar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 
-  
+
 
    <%- include partial/UserHeaderWithSidebar.ejs %>
 
   <!-- =============================================== -->
 
- 
+
 
   <!-- =============================================== -->
 
@@ -49,14 +49,14 @@
     <!-- Content Header (Page header) -->
     <section class="content">
  		<table border="0" width="100%">
-	
-	
+
+
 	<tr height="600">
 		<td width="1%"></td>
 		<td valign="top" align="center" width="30%">
 			<div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="/contents/image/User/<%=result[0].UserName%>.jpg" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="/contents/image/User/<%=result[0].Name%>.jpg" alt="User profile picture">
 
               <h3 class="profile-username text-center"><%=result[0].Name%></h3><br>
 
@@ -82,7 +82,7 @@
             </div>
             <!-- /.box-body -->
           </div>
-			
+
 		</td>
 		<td width="5%"></td>
 		<td width="65%" valign="top">
@@ -101,9 +101,9 @@
           <td width="300" height="200">
             <a href="/HouseDetails/<%=item.Id%>"><img width="300" height="200" src="/Contents/image/house/<%=item.TitleImage%>" class="img"></a>
            <br>
-              
+
           &nbsp; Total View: <%=item.TotalView%>
-                
+
           <br/>
             &nbsp; Tk <%=item.Rent%>/month
           <br/>
@@ -112,7 +112,7 @@
             &nbsp; <%=item.BedRoom%> Bedroom, <%=item.Washroom%> Washroom
           </td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <%   
+          <%
             if(count%3==0){%>
               </tr><tr height="30px"></tr>
             <% count=0; }})%>
