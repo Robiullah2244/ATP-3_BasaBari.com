@@ -60,7 +60,9 @@ router.post('/', upload.single('houseImage'), function(req, res) {
     internet: req.body.internet,
     intercom: req.body.intercom,
     houseImageName,postDate,userName,
-    area:req.body.area,specialNote:req.body.specialNote
+    area:req.body.area,specialNote:req.body.specialNote,
+	lat: req.body.myLat,
+	lng: req.body.myLng,
 
   };
   var validator = new asyncValidator(rules);
@@ -79,7 +81,7 @@ router.post('/', upload.single('houseImage'), function(req, res) {
     else {
       // res.render('SignUp',{SignUpData:data,errs:errors});
       console.log(data);
-      res.render('AddPost', {signedInUser: signedInUser, PostData: data,errs: errors});
+      res.render('AddPost', {signedInUser: req.session.userName, PostData: data,errs: errors});
     }
   })
 

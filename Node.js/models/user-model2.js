@@ -19,13 +19,29 @@ module.exports = {
 		});
 	},
 	addPostToDb:function(userName,d,callback){
-		var sql = "INSERT INTO houseinformation VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	//	console.log(d+"INSERTted");
-		db.executeQuery(sql, [userName,d.location,d.holdingNumber,d.rent,d.houseType,d.bedroom,
-		d.bathroom,d.area,d.balcony,d.drawingroom,d.diningroom,d.parking,d.lift,d.gas,d.generator,d.internet,d.intercom,
-		d.mobileNo,d.specialNote,d.houseName,d.postDate,d.houseImageName,0,1], function(result){
+		if(d.lat != '')
+		{
+			console.log(d.lng);
+			var sql = "INSERT INTO houseinformation VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		//	console.log(d+"INSERTted");
+			db.executeQuery(sql, [userName,d.location,d.holdingNumber,d.rent,d.houseType,d.bedroom,
+			d.bathroom,d.area,d.balcony,d.drawingroom,d.diningroom,d.parking,d.lift,d.gas,d.generator,d.internet,d.intercom,
+			d.mobileNo,d.specialNote,d.houseName,d.postDate,d.houseImageName,0,1,d.lat,d.lng], function(result){
 			callback(result);
-		});
+			});
+		}
+		else
+		{
+			console.log("else");
+			var sql = "INSERT INTO houseinformation VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,0)";
+	//	console.log(d+"INSERTted");
+			db.executeQuery(sql, [userName,d.location,d.holdingNumber,d.rent,d.houseType,d.bedroom,
+			d.bathroom,d.area,d.balcony,d.drawingroom,d.diningroom,d.parking,d.lift,d.gas,d.generator,d.internet,d.intercom,
+			d.mobileNo,d.specialNote,d.houseName,d.postDate,d.houseImageName,0,1], function(result){
+			callback(result);
+			});
+		}
+		
 	},
 	getNumberOfPostByUserName: function(userName,callback){
 		var sql = "SELECT count(*) numberOfPost  from houseinformation where UserName=?";

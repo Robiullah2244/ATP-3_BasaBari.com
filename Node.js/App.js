@@ -30,6 +30,7 @@ var addPost = require('./Controllers/AddPost');
 var userDashboard=require('./Controllers/userDashboard');
 var userAllPosts=require('./Controllers/userAllPosts');
 var search=require('./Controllers/Search');
+var map=require('./Controllers/Map');
 
 
 //CONFIGURE
@@ -41,12 +42,19 @@ app.use('/Contents',express.static('Contents'));
 app.use(expressSession({secret: 'my top secret pass', saveUninitialized: true, resave: true}));
 
 
+app.get('/mapView',function(req,res)
+{
 
+		res.render('mapView');
+
+})
 
 app.use('/signUp',signUp);
 app.use('/addPost',addPost);
 app.use('/userDashboard',userDashboard);
 app.use('/userAllPosts',userAllPosts);
+app.use('/map',map);
+
 // app.get('/addpost',function(req,res)
 // {
 // 	res.render('addpost');

@@ -217,4 +217,16 @@ module.exports = {
 	},
 	
 	
+	addHouseLatLngInHouseInformationTable: function(lat,lng, callback){
+		var date = new Date();
+		var sql = "INSERT INTO `book`( `HouseId`, `PostUserName`, `BookUserName`, `BookDate`) VALUES ( ?,?,?,?)";
+		var sqlParam = [id, postUserName, bookUserName, date];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	},
+	
 };
