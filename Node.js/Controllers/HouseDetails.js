@@ -31,7 +31,6 @@ router.get('/:id', function(req, res){
 router.get('/map/:id', function(req, res){
 
 	id = req.params.id;
-console.log("safcsvfsdvgdf");
 	
 	userModel.getPostById(id, function(result1){
 		

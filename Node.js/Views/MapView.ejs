@@ -7,7 +7,7 @@
   <title>My Google Map</title>
   <style>
     #map{
-      height:400px;
+      height:600px;
       width:100%;
     }
   </style>
@@ -21,7 +21,7 @@
     function initMap(){
       // Map options
       var options = {
-        zoom:8,
+        zoom:16,
         center:{lat:<%=lat%>,lng:<%=lng%>}
       }
 
@@ -59,28 +59,36 @@
       */
 
       // Array of markers
-      var markers = [
-        {
-          coords:{lat:<%=lat%>,lng:<%=lng%>},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h1><%result%></h1>'
-        },
-        {
-          coords:{lat:42.8584,lng:-70.9300},
-          content:'<h1>Amesbury MA</h1>'
-        },
-        {
-          coords:{lat:42.7762,lng:-71.0773}
-        }
-      ];
+      // var markers = [
+      //   {
+      //     coords:{lat:<%=lat%>,lng:<%=lng%>},
+      //     iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+      //     content:'<h1><%result%></h1>'
+      //   },
+      //   {
+      //     coords:{lat:42.8584,lng:-70.9300},
+      //     content:'<h1>Amesbury MA</h1>'
+      //   },
+      //   {
+      //     coords:{lat:42.7762,lng:-71.0773}
+      //   }
+      // ];
+
+      var marker = new google.maps.Marker({
+        position:{lat:<%=lat%>,lng:<%=lng%>},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
         
-        for(var i = 0;i < ressult.length;i++)
-            {
-                coords:{lat:<%=result[i].Lat%>,lng:<%=result[i].Lat%>},
-                iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                 addMarker(markers[i]);
-                content:'<h1><%result%></h1>'
-            }
+        // <%result.forEach(function(item) {; %>
+            
+        //         coords:{lat:<%=item.Lat%>,lng:<%=item.Lng%>},
+        //         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        //          addMarker(markers[i]);
+        //         content:'<h1><%item.HouseName%><br>Rent: <%item.HouseName%></h1>'
+            
+
+        //   <%});%>
         
 
       // Add Marker Function
