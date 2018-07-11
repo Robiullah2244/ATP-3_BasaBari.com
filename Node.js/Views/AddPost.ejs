@@ -66,28 +66,28 @@
 
                     <div class="form-group">
                       <label for="houseName">House Name</label>
-                      <input type="text" class="form-control" id="houseName" name="houseName" placeholder="Enter the address">
+                      <input type="text" class="form-control" id="houseName" name="houseName" placeholder="Enter the house name">
                     </div>
                     <div class="form-group">
                       <label for="location">Location <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="location" name="location" value="<%=PostData.location%>" placeholder="Enter the address">
+                      <input type="text" class="form-control" id="location" name="location" value="<%=PostData.location%>" placeholder="Enter the address" required>
                     </div>
-                    
+
                     <div class="form-group">
                       <label for="mobileNo">Mobile No <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="mobileNo" name="mobileNo" value="<%=PostData.mobileNo%>" placeholder="Enter the address">
+                      <input type="text" class="form-control" id="mobileNo" name="mobileNo" value="<%=PostData.mobileNo%>" placeholder="Enter the mobile no" required min="11">
                     </div>
                     <div class="form-group">
                       <label for="holdingNumber">Holding Number <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="holdingNumber" name="holdingNumber" placeholder="Enter the holding number">
+                      <input type="text" class="form-control" id="holdingNumber" name="holdingNumber" placeholder="Enter the holding number"  required >
                     </div>
                     <div class="form-group">
                       <label for="rent">Rent <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="rent" name="rent" placeholder="Enter rent">
+                      <input type="text" class="form-control" id="rent" name="rent" placeholder="Enter rent" required >
                     </div>
                     <div class="form-group">
                       <label for="houseType">House Type<font color="red" size="5"> *</font></label>
-                      <select id="houseType" name="houseType" onclick="validateHouseType()">
+                      <select id="houseType" name="houseType" onclick="validateHouseType()" required >
                 				<option value="">Please select</option>
                 				<option value="Tin shade">Tin shade</option>
                 				<option value="Building">Building</option>
@@ -96,61 +96,61 @@
                     </div>
                     <div class="form-group">
                       <label for="bedroom">Bedroom <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="bedroom" name="bedroom" placeholder="Number of bed room">
+                      <input type="text" class="form-control" id="bedroom" name="bedroom" placeholder="Number of bed room" required >
                     </div>
                     <div class="form-group">
                       <label for="bathroom">Bathroom <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="bathroom" name="bathroom" placeholder="Number of bathroom">
+                      <input type="text" class="form-control" id="bathroom" name="bathroom" placeholder="Number of bathroom" required >
                     </div>
                     <div class="form-group">
                       <label for="area">Area </label>
-                      <input type="text" class="form-control" id="area" name="area" placeholder="Enter the square feet of the house">
+                      <input type="text" class="form-control" id="area" name="area" placeholder="Enter the square feet of the house" required >
                     </div>
                   </td>
 
                   <td width='50%' style='padding: 5px;' valign="top">
                     <div class="form-group">
                       <label for="balcony">Balcony <font color="red" size="5"> *</font></label>
-                      <input type="text" class="form-control" id="balcony" name="balcony" placeholder="Number of balcony">
+                      <input type="text" class="form-control" id="balcony" name="balcony" placeholder="Number of balcony" required >
                     </div>
                     <div class="form-group">
                       <label for="drawingroom">Drawing Room<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="drawingroom" value="1">Yes
+                      <input type="radio" name="drawingroom" value="1"  required >Yes
                       <input type="radio" name="drawingroom" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="diningroom">Dining Room<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="diningroom" value="1">Yes
+                      <input type="radio" name="diningroom" value="1" required >Yes
                       <input type="radio" name="diningroom" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="lift">Lift<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="lift" value="1">Yes
+                      <input type="radio" name="lift" value="1" required >Yes
                       <input type="radio" name="lift" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="gas">Gas<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="gas" value="1">Yes
+                      <input type="radio" name="gas" value="1" required >Yes
                       <input type="radio" name="gas" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="generator">Generator<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="generator" value="1">Yes
+                      <input type="radio" name="generator" value="1" required >Yes
                       <input type="radio" name="generator" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="internet">Internet<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="internet" value="1">Yes
+                      <input type="radio" name="internet" value="1" required >Yes
                       <input type="radio" name="internet" value="no">No
                     </div>
                     <div class="form-group">
                       <label for="intercom">Intercom<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="intercom" value="1">Yes
+                      <input type="radio" name="intercom" value="1" required >Yes
                       <input type="radio" name="intercom" value="0">No
                     </div>
                     <div class="form-group">
                       <label for="parking">Parking<font color="red" size="5"> *</font></label>
-                      <input type="radio" name="parking" value="1">Yes
+                      <input type="radio" name="parking" value="1" required >Yes
                       <input type="radio" name="parking" value="0">No
                     </div>
                     <div class="form-group">
@@ -165,13 +165,13 @@
                     <input id="myLng" style="visibility: hidden;"  name="myLng"/>
 
                     <input id="myLat" style="visibility: hidden;" name="myLat"  />
-                    
+
 
                   </td>
                 </tr>
 
               </table>
-              
+
             </div>
             <!-- /.box-body -->
 
@@ -183,8 +183,8 @@
    <h1>My Google Map</h1>
   <div id="map" style="height: 100%;height: 600"></div>
   <script>
-  
- 
+
+
     function initMap(){
       // Map options
       var options = {
@@ -235,9 +235,9 @@
         }
       }
 
-      
+
       }
-    
+
   </script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6PfzusjGCzRcG1S1zd34WUZZ3y-Dg6lk&libraries&callback=initMap">

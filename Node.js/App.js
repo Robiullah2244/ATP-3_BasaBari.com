@@ -50,10 +50,7 @@ app.get('/mapView',function(req,res)
 })
 
 app.use('/signUp',signUp);
-app.use('/addPost',addPost);
-app.use('/userDashboard',userDashboard);
-app.use('/userAllPosts',userAllPosts);
-app.use('/map',map);
+
 
 // app.get('/addpost',function(req,res)
 // {
@@ -93,7 +90,10 @@ app.use('*', function(req, res, next){
 
 	}
 });
-
+app.use('/addPost',addPost);
+app.use('/userDashboard',userDashboard);
+app.use('/userAllPosts',userAllPosts);
+app.use('/map',map);
 // ROUTES
 //app.use('/login', login);
 
