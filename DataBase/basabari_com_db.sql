@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2018 at 06:18 PM
+-- Generation Time: Jul 11, 2018 at 01:31 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -43,7 +43,7 @@ CREATE TABLE `book` (
 
 INSERT INTO `book` (`Id`, `HouseId`, `PostUserName`, `BookUserName`, `BookDate`, `BookStatus`) VALUES
 (11, 1, 'tanim', 'robi', '2018-07-20', 1),
-(12, 2, 'Tanim', 'tanim', '2018-07-10', 0);
+(13, 5, 'Rezaul', 'tanim', '2018-07-11', 0);
 
 -- --------------------------------------------------------
 
@@ -88,19 +88,25 @@ CREATE TABLE `houseinformation` (
   `PostDate` date NOT NULL,
   `TitleImage` varchar(100) NOT NULL,
   `TotalView` int(20) NOT NULL,
-  `Availability` tinyint(1) NOT NULL
+  `Availability` tinyint(1) NOT NULL,
+  `Lat` double NOT NULL,
+  `Lng` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houseinformation`
 --
 
-INSERT INTO `houseinformation` (`Id`, `UserName`, `Location`, `HoldingNo`, `Rent`, `HouseType`, `BedRoom`, `BathRoom`, `Area`, `Balcony`, `Drawing`, `Dining`, `Parking`, `Lift`, `Gas`, `Generator`, `Internet`, `Intercom`, `Phone`, `SpecialNote`, `HouseName`, `PostDate`, `TitleImage`, `TotalView`, `Availability`) VALUES
-(1, 'Robi', 'Kuril,Dhaka', 'ka/129', 22500, 'Building', 3, 2, '800', 2, 1, 0, 1, 0, 1, 0, 0, 0, '01679420786', 'Must be StudentasDadscscjscijdsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddcdvfvfvfv fghbbhfhcgvjbknxfcv fcvb', 'Rajjak Vila', '2018-07-09', '1.jpg', 40, 0),
-(2, 'Tanim', 'Banani,Dhaka', 'a-13', 52500, 'Dupplex', 4, 3, '1200', 3, 1, 0, 1, 1, 1, 1, 0, 1, '01679420345', 'Must be Family', 'Tanim Vila', '2018-07-07', '2.jpg', 7, 1),
-(3, 'Efti', 'Mirpur,Dhaka', '34/B', 25000, 'Building', 4, 2, '1000', 2, 1, 1, 1, 1, 1, 1, 0, 1, '0167345678', 'Only for Muslim', 'Ma Vila', '2018-07-03', '3.jpg', 9, 0),
-(4, 'RT', 'Jatrabari,Dhaka', '34/A', 17000, 'Building', 4, 2, '900', 2, 1, 0, 1, 0, 0, 1, 1, 1, '0167345456', 'Only for Hindu', 'Sri House', '2018-07-03', '4.jpg', 6, 0),
-(5, 'Rezaul', 'Khilgaon,Dhaka', '34/A', 7000, 'Tin Shade', 4, 2, '900', 2, 1, 0, 1, 0, 0, 1, 1, 1, '0167345456', 'Only for Hindu', 'Sri House', '2018-07-03', '5.jpg', 3, 1);
+INSERT INTO `houseinformation` (`Id`, `UserName`, `Location`, `HoldingNo`, `Rent`, `HouseType`, `BedRoom`, `BathRoom`, `Area`, `Balcony`, `Drawing`, `Dining`, `Parking`, `Lift`, `Gas`, `Generator`, `Internet`, `Intercom`, `Phone`, `SpecialNote`, `HouseName`, `PostDate`, `TitleImage`, `TotalView`, `Availability`, `Lat`, `Lng`) VALUES
+(1, 'Robi', 'Kuril,Dhaka', 'ka/129', 22500, 'Building', 3, 2, '800', 2, 1, 0, 1, 0, 1, 0, 0, 0, '01679420786', 'Must be StudentasDadscscjscijdsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddcdvfvfvfv fghbbhfhcgvjbknxfcv fcvb', 'Rajjak Vila', '2018-07-09', '1.jpg', 94, 1, 22, 90),
+(4, 'tanim', 'Jatrabari,Dhaka', '34/A', 17000, 'Building', 4, 2, '900', 2, 1, 0, 1, 0, 0, 1, 1, 1, '0167345456', 'Only for Hindu', 'Sri House', '2018-07-03', '4.jpg', 6, 0, 23, 90),
+(5, 'tanim', 'Khilgaon,Dhaka', '34/A', 7000, 'Tin Shade', 4, 2, '900', 2, 1, 0, 1, 0, 0, 1, 1, 1, '0167345456', 'Only for Hindu', 'Sri House', '2018-07-03', '5.jpg', 83, 1, 23, 90.5),
+(6, 'tanim', 'asds', '', 0, '', 0, 0, '0', 0, 1, 0, 1, 1, 1, 1, 0, 1, '', '', '', '2018-07-11', '07_11_201815_33_58.png', 0, 1, 24, 90),
+(7, 'tanim', 'asds', '', 0, '', 0, 0, '0', 0, 1, 0, 1, 1, 1, 1, 0, 1, '', '', '', '2018-07-11', '07_11_201815_33_58.png', 0, 1, 0, 0),
+(8, 'tanim', '', '', 0, '', 0, 0, '0', 0, 1, 1, 1, 0, 0, 1, 1, 1, '', '', '', '2018-07-11', '07_11_201815_46_40.jpeg', 38, 1, 23.8103, 90.4125),
+(9, 'Robi', 'comilla', '45', 45600, 'Dupplex', 6, 4, '1500', 7, 1, 1, 1, 1, 1, 1, 0, 0, '0167345678', '', 'Tanim Vila', '2018-07-04', '10.jpg', 0, 1, 22, 90),
+(10, 'Robi', 'comilla', 'r44', 4600, 'Tin Shade', 6, 4, '1500', 7, 0, 1, 1, 0, 1, 1, 0, 0, '0167345678', '', 'Robi Vila', '2018-07-04', '10.jpg', 0, 1, 23, 90),
+(11, 'Robi', 'Dhaka', '45/f', 25600, 'Dupplex', 4, 2, '1000', 2, 1, 1, 1, 1, 1, 1, 0, 0, '0167345678', '', 'Tanim Vila', '2018-07-04', '10.jpg', 0, 1, 25, 90);
 
 -- --------------------------------------------------------
 
@@ -119,8 +125,9 @@ CREATE TABLE `signin` (
 --
 
 INSERT INTO `signin` (`UserName`, `Password`, `Type`) VALUES
+('efti', 'e', 2),
+('rajesh', 'r', 2),
 ('Robi', 'r', 2),
-('RT', 'rt', 2),
 ('Tanim', 't', 2);
 
 -- --------------------------------------------------------
@@ -147,8 +154,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`UserName`, `Name`, `Email`, `Phone`, `Address`, `AccountName`, `AccountNo`, `JoiningDate`, `Points`, `ImageName`) VALUES
-('Robi', 'robi', 'robiullah2244@gmail.com', '008801679420786', 'Uttara,Dhaka', '', '', '2018-07-04', 0, ''),
-('Tanim', 'tanim', 'tanim@gmail.com', '0177233678', 'Kuril,Dhaka', '', '', '2018-07-03', 0, '');
+('efti', 'efti', 'efti@gmail.com', '0197546775', 'mirpur, dhaka', '76543', '65432', '2018-07-10', 443, 'efti.jpg'),
+('rajesh', 'rajesh', 'rajesh@gmail.com', '0197546775', 'mirpur, dhaka', '76543', '65432', '2018-07-10', 443, 'rajesh.jpg'),
+('Robi', 'robi', 'robiullah2244@gmail.com', '008801679420786', 'Uttara,Dhaka', '', '', '2018-07-04', 0, 'robi.jpg'),
+('Tanim', 'tanim', 'tanim@gmail.com', '0177233678', 'Kuril,Dhaka', '', '', '2018-07-03', 0, 'tanim.jpg');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +201,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `houseimage`
@@ -204,7 +213,7 @@ ALTER TABLE `houseimage`
 -- AUTO_INCREMENT for table `houseinformation`
 --
 ALTER TABLE `houseinformation`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
