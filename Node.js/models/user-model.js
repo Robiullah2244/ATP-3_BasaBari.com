@@ -196,14 +196,25 @@ module.exports = {
 		
 	},
 	
-	getAllAvailableSearchedPost: function(callback){
-		var sql = "SELECT * FROM houseInformation WHERE Availability='1' ";
-		var sqlParam = null;
+	getAllAvailableSearchedPostBySearchBySearchByLocation: function(value, callback){
+		var sql = "SELECT * FROM houseInformation WHERE Location like '%"+value+"%' and Availability =?";
+		var sqlParam = [1];
 		db.executeQuery(sql, sqlParam, function(result){
 			
 			callback(result);
 			
 		});
 	},
+	
+	getAllAvailableSearchedPostByNoOfBedRoom: function(value, callback){
+		var sql = "SELECT * FROM houseInformation WHERE BedRoom like '%"+value+"%' and Availability =?";
+		var sqlParam = [1];
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	},
+	
 	
 };
