@@ -140,6 +140,21 @@ module.exports = {
 		
 	},
 	
+	getPostByUserName: function(userName, callback){
+		
+		var sql = "SELECT * FROM HouseInformation WHERE UserName=? ";
+		
+		
+		var sqlParam = [userName];
+		
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+		
+	},
+	
 	getAllApprovedRequestInformationByUserName: function(userName, callback){
 		
 		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=?";
@@ -181,6 +196,14 @@ module.exports = {
 		
 	},
 	
-
+	getAllAvailableSearchedPost: function(callback){
+		var sql = "SELECT * FROM houseInformation WHERE Availability='1' ";
+		var sqlParam = null;
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	},
 	
 };

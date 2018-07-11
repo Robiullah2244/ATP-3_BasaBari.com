@@ -6,8 +6,13 @@ router.get('/', function(req, res){
 
 	
 	userModel.getUserByUserName(req.session.userName, function(result){
-		console.log(result);
-		res.render("UserProfile",{signedInUser : req.session.userName, result:result});
+		userModel.getPostByUserName(req.session.userName, function(posts){
+			console.log(result);
+			console.log(posts);
+			res.render("UserProfile",{signedInUser : req.session.userName, result:result, posts : posts});
+			
+
+		});
 
 	});
 	

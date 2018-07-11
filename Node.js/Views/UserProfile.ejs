@@ -48,12 +48,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content">
- 		<table border="0">
+ 		<table border="0" width="100%">
 	
 	
 	<tr height="600">
 		<td width="1%"></td>
-		<td valign="top" align="center" width="20%">
+		<td valign="top" align="center" width="30%">
 			<div class="box box-primary">
             <div class="box-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="/contents/image/User/<%=result[0].UserName%>.jpg" alt="User profile picture">
@@ -85,22 +85,40 @@
 			
 		</td>
 		<td width="5%"></td>
-		<td width="60%" valign="top">
-            <h1>Active Gigs	</h1><br/><br/>
-            <table cellspacing="40">
-            <tr>
-                <td width="20%">	
-                    <img src="/contents/image/project1.jpg" width="100%"/><br/><br/>
-                    <a href="HouseDetails">I will do c or c++ project for you.</a>
-                </td>
-                <td>	
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="/contents/image/addgig.png"/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="AddPost"><button class="btn btn-primary" style="width: 125px">Add a Post</button></a>
-                </td>
+		<td width="65%" valign="top">
+      <h1>All Post</h1><br/><br/>
+      <table cellspacing="40" width="100%">
+      <tr>
+        <td width="300">
+            <a href="/AddPost"><img width="300" height="200" src="/Contents/image/addPost.png" class="img"></a>
+            <br><br><center><a href="/AddPost"><button class="btn btn-primary">Add Post</button></a></center>
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <%
+          var count = 1;
+          posts.forEach(function(item) { count++; %>
 
-            </tr>
-            </table>
+          <td width="300" height="200">
+            <a href="/HouseDetails/<%=item.Id%>"><img width="300" height="200" src="/Contents/image/house/<%=item.TitleImage%>" class="img"></a>
+           <br>
+              
+          &nbsp; Total View: <%=item.TotalView%>
+                
+          <br/>
+            &nbsp; Tk <%=item.Rent%>/month
+          <br/>
+            &nbsp; <%=item.Location%>
+                  <br/>
+            &nbsp; <%=item.BedRoom%> Bedroom, <%=item.Washroom%> Washroom
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <%   
+            if(count%3==0){%>
+              </tr><tr height="30px"></tr>
+            <% count=0; }})%>
+
+
+        </table>
 		</td>
 	</tr>
 

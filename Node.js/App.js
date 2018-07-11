@@ -29,6 +29,7 @@ var signUp = require('./Controllers/SignUp');
 var addPost = require('./Controllers/AddPost');
 var userDashboard=require('./Controllers/userDashboard');
 var userAllPosts=require('./Controllers/userAllPosts');
+var search=require('./Controllers/Search');
 
 
 //CONFIGURE
@@ -56,6 +57,7 @@ app.use('/userAllPosts',userAllPosts);
 // })
 
 app.use('/houseDetails', houseDetails);
+app.use('/search', search);
 app.use('/booking', booking);
 
 app.use('*', function(req, res, next){

@@ -5,7 +5,7 @@ router.get('/', function(req, res){
   // res.render('SignUp',{SignUpData:[],errs:[]});
     var userName ='tanim';//req.session.userName;
   userModel.getNumberOfPostByUserName(userName,function(result){
-  	res.render('UserDashBoard',{numberOfPost:result[0].numberOfPost});
+  	res.render('UserDashBoard',{signedInUser : req.session.userName, numberOfPost:result[0].numberOfPost});
   });
 });
 module.exports=router;
