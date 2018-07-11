@@ -28,4 +28,27 @@ router.get('/:id', function(req, res){
 
 });
 
+router.get('/map/:id', function(req, res){
+
+	id = req.params.id;
+console.log("safcsvfsdvgdf");
+	
+	userModel.getPostById(id, function(result1){
+		
+		userModel.getAllAvailablePost(function(result){
+
+		
+		var signedInUser = req.session.userName;
+		
+		res.render("mapView", {lat: result1[0].Lat ,lng: result1[0].Lng, result: result});
+
+	
+
+	});
+
+
+	
+
+	});
+});
 module.exports = router;
