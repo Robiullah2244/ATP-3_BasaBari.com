@@ -16,12 +16,12 @@
   <h1>Google Map</h1>
   <div id="map"></div>
   <script>
-  
- 
+
+
     function initMap(){
       // Map options
       var options = {
-        zoom:16,
+        zoom:12,
         center:{lat:<%=lat%>,lng:<%=lng%>}
       }
 
@@ -31,13 +31,10 @@
       // Listen for click on map
       google.maps.event.addListener(map, 'click', function(event){
         // Add marker
-        addMarker({coords:event.latLng});
         var myLng = event.latLng.lat();
     		var myLat = event.latLng.lng();
-    		
-        var url = "/map/storeLocation/"+myLng+"/"+myLat;
-        alert(url);
-        window.location.href = url;
+
+
 
       });
 
@@ -79,17 +76,17 @@
         map:map,
         icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
       });
-        
+
         // <%result.forEach(function(item) {; %>
-            
+
         //         coords:{lat:<%=item.Lat%>,lng:<%=item.Lng%>},
         //         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         //          addMarker(markers[i]);
         //         content:'<h1><%item.HouseName%><br>Rent: <%item.HouseName%></h1>'
-            
+
 
         //   <%});%>
-        
+
 
       // Add Marker Function
       function addMarker(props){

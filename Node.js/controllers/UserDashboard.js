@@ -19,9 +19,16 @@ router.get('/', function(req, res){
 
     })
   });
-    userModel.getNumberOfPostByUserName(userName,function(result){
-    	res.render('UserDashBoard',{arr,signedInUser: userName, numberOfPost:result[0].numberOfPost});
-    });
+  //console.log(arr);
+setTimeout(function(){
+  userModel.getNumberOfPostByUserName(userName,function(result){
+    res.render('UserDashBoard',{arr,signedInUser: userName, numberOfPost:result[0].numberOfPost});
+  });
+},4000);
+
+
+
+
 
 });
 module.exports=router;
