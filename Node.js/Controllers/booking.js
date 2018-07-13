@@ -17,10 +17,9 @@ router.get('/:id', function(req, res){
 			callback();
 			
 		})};
-		console.log(postUserName);
-		console.log(id);
 		var insertIntoBookingTable = function(){userModel.booking(id, postUserName, bookUserName, function(result)
 		{
+			console.log(result);
 			alert("successfully Booked");
 			res.redirect('/home');
 

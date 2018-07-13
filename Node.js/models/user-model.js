@@ -15,9 +15,19 @@ module.exports = {
 		});
 	},
 	
+	getAllAvailablePostWithOutThis: function(houseId, callback){
+		var sql = "SELECT * FROM houseInformation WHERE Availability=? AND Id!=? ";
+		var sqlParam = [1,houseId];
+		db.executeQuery(sql, sqlParam, function(result){
+			
+			callback(result);
+			
+		});
+	},
+	
 	getAllAvailablePost: function(callback){
-		var sql = "SELECT * FROM houseInformation WHERE Availability='1' ";
-		var sqlParam = null;
+		var sql = "SELECT * FROM houseInformation WHERE Availability=?";
+		var sqlParam = [1];
 		db.executeQuery(sql, sqlParam, function(result){
 			
 			callback(result);
@@ -71,7 +81,7 @@ module.exports = {
 	
 	getAllPendingRequestInformationByUserName: function(userName, callback){
 		
-		var sql = "SELECT Book.BookUserName,Book.PostUserName,Rent,HouseName,BookDate,HouseId,Book.Id FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=?";
+		var sql = "SELECT Book.BookUserName,Book.PostUserName,Rent,HouseName,BookDate,HouseId,Book.Id FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=? AND HouseId=houseinformation.id";
 		
 		
 		var sqlParam = [userName,userName,0];
@@ -157,7 +167,7 @@ module.exports = {
 	
 	getAllApprovedRequestInformationByUserName: function(userName, callback){
 		
-		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=?";
+		var sql = "SELECT * FROM Book,HouseInformation WHERE PostUserName=? AND HouseInformation.UserName=? AND BookStatus=? AND HouseId=HouseInformation.Id";
 		
 		
 		var sqlParam = [userName,userName,1];

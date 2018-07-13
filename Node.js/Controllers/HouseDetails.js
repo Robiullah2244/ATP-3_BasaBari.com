@@ -33,13 +33,13 @@ router.get('/map/:id', function(req, res){
 	id = req.params.id;
 	
 	userModel.getPostById(id, function(result1){
-		
-		userModel.getAllAvailablePost(function(result){
+		console.log(result1);
+		userModel.getAllAvailablePostWithOutThis(result1[0].Id, function(result){
 
-		
+		console.log(result);
 		var signedInUser = req.session.userName;
 		
-		res.render("mapView", {lat: result1[0].Lat ,lng: result1[0].Lng, result: result});
+		res.render("mapView", {lat: result1[0].Lat ,lng: result1[0].Lng,rent:result1[0].Rent,bed:result1[0].BedRoom,bath:result1[0].BathRoom, result: result});
 
 	
 

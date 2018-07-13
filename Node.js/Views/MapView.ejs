@@ -29,14 +29,20 @@
       var map = new google.maps.Map(document.getElementById('map'), options);
 
       // Listen for click on map
-      google.maps.event.addListener(map, 'click', function(event){
-        // Add marker
-        var myLng = event.latLng.lat();
-    		var myLat = event.latLng.lng();
 
 
-
+      var marker = new google.maps.Marker({
+        position:{lat:<%=lat%>,lng:<%=lng%>},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        
       });
+      var infoWindow = new google.maps.InfoWindow({
+            content:'Rent: <%=rent%><br>Bed Room: <%=bed%><br>Wash Room: <%=bath%>'
+          });
+      marker.addListener('click', function(){
+            infoWindow.open(map, marker)
+         });
 
       /*
       // Add marker
@@ -71,26 +77,24 @@
       //   }
       // ];
 
-      var marker = new google.maps.Marker({
-        position:{lat:<%=lat%>,lng:<%=lng%>},
-        map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
+      
+var count=0;
+        <%result.forEach(function(item) { %>
+          count++;
+              var marker1={
+                coords:{lat:<%=item.Lat%>,lng:<%=item.Lng%>},
+                iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content:'Rent: <%=item.Rent%><br>Bed Room: <%=item.BedRoom%><br>Wash Room: <%=item.BathRoom%>'
+              }
+              addMarker(marker1);
 
-        // <%result.forEach(function(item) {; %>
+          <%});%>
 
-        //         coords:{lat:<%=item.Lat%>,lng:<%=item.Lng%>},
-        //         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-        //          addMarker(markers[i]);
-        //         content:'<h1><%item.HouseName%><br>Rent: <%item.HouseName%></h1>'
-
-
-        //   <%});%>
-
+        
 
       // Add Marker Function
       function addMarker(props){
-        var marker = new google.maps.Marker({
+        var marker1 = new google.maps.Marker({
           position:props.coords,
           map:map,
           //icon:props.iconImage
@@ -99,7 +103,7 @@
         // Check for customicon
         if(props.iconImage){
           // Set icon image
-          marker.setIcon(props.iconImage);
+          marker1.setIcon(props.iconImage);
         }
 
         // Check content
@@ -108,8 +112,8 @@
             content:props.content
           });
 
-          marker.addListener('click', function(){
-            infoWindow.open(map, marker);
+          marker1.addListener('click', function(){
+            infoWindow.open(map, marker1  );
           });
         }
       }
