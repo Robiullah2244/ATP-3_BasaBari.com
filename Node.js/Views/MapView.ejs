@@ -34,11 +34,11 @@
       var marker = new google.maps.Marker({
         position:{lat:<%=lat%>,lng:<%=lng%>},
         map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        icon:'/contents/image/Home_Icon_30x39.png',
         
       });
       var infoWindow = new google.maps.InfoWindow({
-            content:'Rent: <%=rent%><br>Bed Room: <%=bed%><br>Wash Room: <%=bath%>'
+            content:'Rent: <%=rent%><br>Bed Room: <%=bed%><br>Wash Room: <%=bath%><br>This is your clicked House'
           });
       marker.addListener('click', function(){
             infoWindow.open(map, marker)
@@ -83,8 +83,8 @@ var count=0;
           count++;
               var marker1={
                 coords:{lat:<%=item.Lat%>,lng:<%=item.Lng%>},
-                iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                content:'Rent: <%=item.Rent%><br>Bed Room: <%=item.BedRoom%><br>Wash Room: <%=item.BathRoom%>'
+                iconImage:'/contents/image/Home_icon_1_30x39-real.png',
+                content:'Rent: <%=item.Rent%><br>Bed Room: <%=item.BedRoom%><br>Wash Room: <%=item.BathRoom%><br><a href="/houseDetails/<%=item.Id%>">View Details</a>'
               }
               addMarker(marker1);
 

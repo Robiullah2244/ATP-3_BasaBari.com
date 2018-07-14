@@ -5,6 +5,7 @@ var userModel = require.main.require('./models/user-model');
 router.get('/:id', function(req, res){
 
 	id = req.params.id;
+	console.log("robi");
 
 	userModel.increaseViewCount(id, function(result){
 
